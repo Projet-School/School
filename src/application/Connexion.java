@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 	 
 // le controller du fichier Connexion.fxml
-public class Controller {
+public class Connexion {
 
 		@FXML
 		private TextField id;
