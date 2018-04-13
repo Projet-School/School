@@ -4,12 +4,10 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
-import javafx.scene.*;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
 	 
 // le controller du fichier Connexion.fxml
-public class Connexion {
+public class ConnexionController {
 
 		@FXML
 		private TextField id;
@@ -18,13 +16,26 @@ public class Connexion {
 		private PasswordField password;
 		
 		@FXML
-		private Button but;
+		private Button buttonCon;
+		
+		@FXML
+		private Button buttonSign;
 		
 		@FXML
 		private Label error;
 		
 		@FXML
 		private void connexionAction(ActionEvent event) {
+		if(event.getSource()== buttonSign) {
+			try {
+				Main.changeScene("SignIn.fxml");
+			} catch (IOException e) {
+				System.err.println(e.getMessage());
+				System.out.println("Impossible d'afficher la page d'inscription !");
+			}
+		}
+		
+		else {
 			if(id.getText().isEmpty()) {
 				error.setVisible(true);
 				password.setText("");
@@ -36,15 +47,13 @@ public class Connexion {
 			}
 			else {
 				try {
-					Parent home_page = FXMLLoader.load(getClass().getResource("Connected.fxml"));
-					Scene home_scene = new Scene(home_page);
-					Stage home_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-					home_stage.setScene(home_scene);
-					home_stage.show();
+					Main.changeScene("Connected.fxml");
 				} catch (IOException e) {
-					System.out.println("Impossible d'afficher la page !");
+					System.err.println(e.getMessage());
+					System.out.println("Impossible d'afficher la page home !");
 				}
 			}
+		}
 		}
 		
 }
