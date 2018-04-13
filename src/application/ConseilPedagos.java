@@ -2,10 +2,10 @@ package application;
 
 
 public class ConseilPedagos {
-    public String idConseilPedago;
-    public String idReunion;
-    public String libelConseilPedago;
-    public String decisConseilPedago;
+    private String idConseilPedago;
+    private String idReunion;
+    private String libelConseilPedago;
+    private String decisConseilPedago;
 
     void setIdConseilPedago(String value) {
         this.idConseilPedago = value;

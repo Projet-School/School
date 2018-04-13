@@ -2,11 +2,11 @@ package application;
 
 
 public class Supports {
-    public String idSupport;
-    public String idMatiere;
-    public String idTypeDocs;
-    public String libelSupport;
-    public String titreSupport;
+    private String idSupport;
+    private String idMatiere;
+    private String idTypeDocs;
+    private String libelSupport;
+    private String titreSupport;
 
     String getIdSupport() {
         return this.idSupport;

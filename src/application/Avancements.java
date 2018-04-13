@@ -2,11 +2,11 @@ package application;
 
 
 public class Avancements {
-    public String idAvancement;
-    public String idSeance;
-    public String leconsCours;
-    public String commentCours;
-    public String avancemCours;
+    private String idAvancement;
+    private String idSeance;
+    private String leconsCours;
+    private String commentCours;
+    private String avancemCours;
 
     String getIdAvancement() {
         return this.idAvancement;

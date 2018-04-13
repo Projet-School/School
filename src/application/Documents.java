@@ -2,17 +2,17 @@ package application;
 
 
 public class Documents {
-    public String idDocument;
-    public String idSupport;
-    public String idTypeDoc;
-    public String libelDocument;
-    public String versionDocument;
-    public String mediaDocument;
-    public String nbrPagNBDocument;
-    public String nbrPagCoulDocument;
-    public String reliureDocument;
-    public String texteDocument;
-    public String couvDocument;
+    private String idDocument;
+    private String idSupport;
+    private String idTypeDoc;
+    private String libelDocument;
+    private String versionDocument;
+    private String mediaDocument;
+    private String nbrPagNBDocument;
+    private String nbrPagCoulDocument;
+    private String reliureDocument;
+    private String texteDocument;
+    private String couvDocument;
 
     void setIdDocument(String value) {
         this.idDocument = value;

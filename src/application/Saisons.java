@@ -2,8 +2,8 @@ package application;
 
 
 public class Saisons {
-    public String idSaison;
-    public String nomSaison;
+    private String idSaison;
+    private String nomSaison;
 
     String getIdSaison() {
         return this.idSaison;

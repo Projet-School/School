@@ -2,14 +2,14 @@ package application;
 
 
 public class Materiels {
-    public String idMateriel;
-    public String libelMateriel;
-    public String marqueMateriel;
-    public String referMateriel;
-    public String dateAcquMateriel;
-    public String datePerteMateriel;
-    public String dateRemiseMateriel;
-    public String dateRestitMateriel;
+    private String idMateriel;
+    private String libelMateriel;
+    private String marqueMateriel;
+    private String referMateriel;
+    private String dateAcquMateriel;
+    private String datePerteMateriel;
+    private String dateRemiseMateriel;
+    private String dateRestitMateriel;
 
     String getDateRestitMateriel() {
         return this.dateRestitMateriel;

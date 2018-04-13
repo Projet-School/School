@@ -2,8 +2,8 @@ package application;
 
 
 public class Fonctions {
-    public String idFonction;
-    public String libelFonction;
+    private String idFonction;
+    private String libelFonction;
 
     void setLibelFonction(String value) {
         this.libelFonction = value;

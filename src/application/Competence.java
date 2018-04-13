@@ -2,8 +2,8 @@ package application;
 
 
 public class Competence {
-    public String idProgramme;
-    public String idEnseignant;
+    private String idProgramme;
+    private String idEnseignant;
 
     String getIdProgramme() {
         return this.idProgramme;

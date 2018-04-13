@@ -2,8 +2,8 @@ package application;
 
 
 public class Fins {
-    public String idFin;
-    public String heureFin;
+    private String idFin;
+    private String heureFin;
 
     String getIdFin() {
         return this.idFin;

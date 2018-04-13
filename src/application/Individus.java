@@ -2,21 +2,21 @@ package application;
 
 
 public abstract class Individus {
-    public String idIndividu;
-    public String nomIndividu;
-    public String prenomIndividu;
-    public String generIndividu;
-    public String datNaisIndividu;
-    public String lieuNaisIndividu;
-    public String nivEtudIndividu;
-    public String domEtudIndividu;
-    public String profIndividu;
-    public String domCompetIndividu;
-    public String langMatIndividu;
-    public String langParlIndividu;
-    public String photoIndividu;
-    public String rectoPIDIndividu;
-    public String versoPIDIndividu;
+    private String idIndividu;
+    private String nomIndividu;
+    private String prenomIndividu;
+    private String generIndividu;
+    private String datNaisIndividu;
+    private String lieuNaisIndividu;
+    private String nivEtudIndividu;
+    private String domEtudIndividu;
+    private String profIndividu;
+    private String domCompetIndividu;
+    private String langMatIndividu;
+    private String langParlIndividu;
+    private String photoIndividu;
+    private String rectoPIDIndividu;
+    private String versoPIDIndividu;
 
     String getIdIndividu() {
         return this.idIndividu;

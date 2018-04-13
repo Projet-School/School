@@ -2,8 +2,8 @@ package application;
 
 
 public class Jours {
-    public String idJours;
-    public String nomJours;
+    private String idJours;
+    private String nomJours;
 
     void setIdJours(String value) {
         this.idJours = value;

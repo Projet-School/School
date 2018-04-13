@@ -2,17 +2,17 @@ package application;
 
 
 public class Reunions {
-    public String idReunion;
-    public String idSeance;
-    public String libelReunion;
-    public String participantsReunion;
-    public String ODJReunion;
-    public String hrDebReunion;
-    public String hrFinReunion;
-    public String presReunion;
-    public String abscReunion;
-    public String commReunion;
-    public String CRReunion;
+    private String idReunion;
+    private String idSeance;
+    private String libelReunion;
+    private String participantsReunion;
+    private String ODJReunion;
+    private String hrDebReunion;
+    private String hrFinReunion;
+    private String presReunion;
+    private String abscReunion;
+    private String commReunion;
+    private String CRReunion;
 
     String getIdReunion() {
         return this.idReunion;

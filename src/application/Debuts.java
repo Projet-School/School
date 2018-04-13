@@ -2,8 +2,8 @@ package application;
 
 
 public class Debuts {
-    public String idDebut;
-    public String heureDebut;
+    private String idDebut;
+    private String heureDebut;
 
     String getIdDebut() {
         return this.idDebut;

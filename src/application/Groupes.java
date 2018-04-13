@@ -2,19 +2,19 @@ package application;
 
 
 public class Groupes {
-    public String idGroupe;
-    public String idSession;
-    public String idPlanning;
-    public String idSalle;
-    public String idModule;
-    public String libelGroupe;
-    public String genreGroupe;
-    public String commentGroupe;
-    public String effsuplemGroupe;
-    public String seanSuplGroupe;
-    public String dateExamGroupe;
-    public String HeurePauseHoraire;
-    public String dureePauseHoraie;
+    private String idGroupe;
+    private String idSession;
+    private String idPlanning;
+    private String idSalle;
+    private String idModule;
+    private String libelGroupe;
+    private String genreGroupe;
+    private String commentGroupe;
+    private String effsuplemGroupe;
+    private String seanSuplGroupe;
+    private String dateExamGroupe;
+    private String HeurePauseHoraire;
+    private String dureePauseHoraie;
 
     String getIdGroupe() {
         return this.idGroupe;

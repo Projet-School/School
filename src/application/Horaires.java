@@ -3,12 +3,12 @@ package application;
 
 
 public class Horaires {
-    public String idHoraire;
-    public String isSession;
-    public String idJours;
-    public String idDebut;
-    public String idFin;
-    public String libelHoraire;
+    private String idHoraire;
+    private String isSession;
+    private String idJours;
+    private String idDebut;
+    private String idFin;
+    private String libelHoraire;
 
     String getIdHoraire() {
         return this.idHoraire;

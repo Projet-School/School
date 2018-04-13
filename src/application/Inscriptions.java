@@ -2,14 +2,14 @@ package application;
 
 
 public class Inscriptions {
-    public String idInscription;
-    public String idEtudiant;
-    public String idPaiement;
-    public String idPrEnCharg;
-    public String dateInscription;
-    public String dateAbandInscription;
-    public String dateAnnulInscription;
-    public String creditInscritpion;
+    private String idInscription;
+    private String idEtudiant;
+    private String idPaiement;
+    private String idPrEnCharg;
+    private String dateInscription;
+    private String dateAbandInscription;
+    private String dateAnnulInscription;
+    private String creditInscritpion;
 
     void setIdInscription(String value) {
         this.idInscription = value;

@@ -2,12 +2,12 @@ package application;
 
 
 public class Examens {
-    public String idExamen;
-    public String idSupport;
-    public String typeExamen;
-    public String formeExamen;
-    public String baremExamen;
-    public String descrExamen;
+    private String idExamen;
+    private String idSupport;
+    private String typeExamen;
+    private String formeExamen;
+    private String baremExamen;
+    private String descrExamen;
 
     void setIdExamen(String value) {
         this.idExamen = value;

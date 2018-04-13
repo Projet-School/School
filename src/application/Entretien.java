@@ -2,8 +2,8 @@ package application;
 
 
 public class Entretien {
-    public String idEntretien;
-    public String idAffectation;
+    private String idEntretien;
+    private String idAffectation;
 
     void setIdEntretien(String value) {
         this.idEntretien = value;

@@ -2,17 +2,17 @@ package application;
 
 
 public class Cours {
-    public String idCours;
-    public String idSupport;
-    public String typeDocCours;
-    public String nbrTypeDocCours;
-    public String supportCours;
-    public String libelCours;
-    public String niveauCours;
-    public String partieCours;
-    public String volHorCours;
-    public String descriptifCours;
-    public String effetMaxCours;
+    private String idCours;
+    private String idSupport;
+    private String typeDocCours;
+    private String nbrTypeDocCours;
+    private String supportCours;
+    private String libelCours;
+    private String niveauCours;
+    private String partieCours;
+    private String volHorCours;
+    private String descriptifCours;
+    private String effetMaxCours;
 
     String getIdCours() {
         return this.idCours;

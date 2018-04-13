@@ -2,8 +2,8 @@ package application;
 
 
 public class TypeDocs {
-    public String idTypeDoc;
-    public String libelTypeDoc;
+    private String idTypeDoc;
+    private String libelTypeDoc;
 
     void setIdTypeDoc(String value) {
         this.idTypeDoc = value;

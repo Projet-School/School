@@ -2,11 +2,11 @@ package application;
 
 
 public class Tarifs {
-    public String idTarif;
-    public String fraisInscTarif;
-    public String cotisTarif;
-    public String remDurTarif;
-    public String remModTarif;
+    private String idTarif;
+    private String fraisInscTarif;
+    private String cotisTarif;
+    private String remDurTarif;
+    private String remModTarif;
 
     void setIdTarif(String value) {
         this.idTarif = value;

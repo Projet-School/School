@@ -2,13 +2,13 @@ package application;
 
 
 public class Seances {
-    public String idSeance;
-    public String idGroupe;
-    public String idHoraire;
-    public String remplacantSeance;
-    public String rattrapageSeance;
-    public String annulationSeance;
-    public String reportSeance;
+    private String idSeance;
+    private String idGroupe;
+    private String idHoraire;
+    private String remplacantSeance;
+    private String rattrapageSeance;
+    private String annulationSeance;
+    private String reportSeance;
 
     String getIdSeance() {
         return this.idSeance;

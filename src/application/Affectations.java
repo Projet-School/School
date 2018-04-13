@@ -1,17 +1,17 @@
 package application;
 
 public class Affectations {
-    public String idAffectation;
-    public String idContrat;
-    public String trigrAffectation;
-    public String loginAffectation;
-    public String motPasseAffectation;
-    public String dateEntrAffectation;
-    public String dateSortAffectation;
-    public String commAffectation;
-    public String ficheAffectation;
-    public String referentAffectation;
-    public String validAffectation;
+    private String idAffectation;
+    private String idContrat;
+    private String trigrAffectation;//je ne sais pas à quoi ça correspond
+    private String loginAffectation;
+    private String motPasseAffectation;
+    private String dateEntrAffectation;
+    private String dateSortAffectation;
+    private String commAffectation;
+    private String ficheAffectation;
+    private String referentAffectation;
+    private String validAffectation;
 
     String getIdAffectation() {
         return this.idAffectation;

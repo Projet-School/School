@@ -2,15 +2,15 @@ package application;
 
 
 public class Telephones {
-    public String idTelephone;
-    public String idIndividu;
-    public String mobileTelephone;
-    public String fiixeTelephone;
-    public String prenomContactTelephone;
-    public String nomContactTelephone;
-    public String mobileContactTelephone;
-    public String fixeContactTelephone;
-    public String lienContactTelephone;
+    private String idTelephone;
+    private String idIndividu;
+    private String mobileTelephone;
+    private String fiixeTelephone;
+    private String prenomContactTelephone;
+    private String nomContactTelephone;
+    private String mobileContactTelephone;
+    private String fixeContactTelephone;
+    private String lienContactTelephone;
 
     String getLienContactTelephone() {
         return this.lienContactTelephone;

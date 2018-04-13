@@ -2,15 +2,15 @@ package application;
 
 
 public class plannings {
-    public String idPlanning;
-    public String horLunPlanning;
-    public String horMarPlanning;
-    public String horMerPlanning;
-    public String horJeuPlanning;
-    public String horVenPlanning;
-    public String horSaPlanning;
-    public String horDimPlanning;
-    public String libelPlanning;
+    private String idPlanning;
+    private String horLunPlanning;
+    private String horMarPlanning;
+    private String horMerPlanning;
+    private String horJeuPlanning;
+    private String horVenPlanning;
+    private String horSaPlanning;
+    private String horDimPlanning;
+    private String libelPlanning;
 
     String getIdPlanning() {
         return this.idPlanning;

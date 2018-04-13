@@ -2,11 +2,11 @@ package application;
 
 
 public class Programme {
-    public String idLecon;
-    public String idSupport;
-    public String idSeance;
-    public String idGroupe;
-    public String idHoraire;
+    private String idLecon;
+    private String idSupport;
+    private String idSeance;
+    private String idGroupe;
+    private String idHoraire;
 
     String getIdLecon() {
         return this.idLecon;

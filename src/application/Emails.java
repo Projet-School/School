@@ -2,10 +2,10 @@ package application;
 
 
 public class Emails {
-    public String idEmail;
-    public String idIndividu;
-    public String adresseEmail;
-    public String frqtUtlMailEmail;
+    private String idEmail;
+    private String idIndividu;
+    private String adresseEmail;
+    private String frqtUtlMailEmail;
 
     String getIdEmail() {
         return this.idEmail;

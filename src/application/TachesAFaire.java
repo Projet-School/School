@@ -2,13 +2,13 @@ package application;
 
 
 public class TachesAFaire {
-    public String idTacheAFaire;
-    public String idReunion;
-    public String libelTacheAFaire;
-    public String echTacheAFaire;
-    public String emmettTacheAFaire;
-    public String commTacheAFaire;
-    public String ficheTacheAFaire;
+    private String idTacheAFaire;
+    private String idReunion;
+    private String libelTacheAFaire;
+    private String echTacheAFaire;
+    private String emmettTacheAFaire;
+    private String commTacheAFaire;
+    private String ficheTacheAFaire;
 
     String getIdTacheAFaire() {
         return this.idTacheAFaire;

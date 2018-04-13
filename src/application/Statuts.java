@@ -2,9 +2,9 @@ package application;
 
 
 public class Statuts {
-    public String idStatut;
-    public String typeStatut;
-    public String libelStatut;
+    private String idStatut;
+    private String typeStatut;
+    private String libelStatut;
 
     String getIdStatut() {
         return this.idStatut;

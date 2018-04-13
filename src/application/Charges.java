@@ -2,10 +2,10 @@ package application;
 
 
 public class Charges {
-    public String idCharge;
-    public String nomCharge;
-    public String typeCharge;
-    public String montCharge;
+    private String idCharge;
+    private String nomCharge;
+    private String typeCharge;
+    private String montCharge;
     
     String getIdCharge() {
         return this.idCharge;

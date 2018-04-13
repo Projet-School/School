@@ -2,8 +2,8 @@ package application;
 
 
 public class Semaines {
-    public String idSemaine;
-    public String noSemaine;
+    private String idSemaine;
+    private String noSemaine;
 
     String getIdSemaine() {
         return this.idSemaine;

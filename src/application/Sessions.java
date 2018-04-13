@@ -2,12 +2,12 @@ package application;
 
 
 public class Sessions {
-    public String idSession;
-    public String idAnnee;
-    public String libelSession;
-    public String dateDebutSession;
-    public String dateFinSession;
-    public String joursFerieSession;
+    private String idSession;
+    private String idAnnee;
+    private String libelSession;
+    private String dateDebutSession;
+    private String dateFinSession;
+    private String joursFerieSession;
 
     void setIdSession(String value) {
         this.idSession = value;

@@ -2,8 +2,8 @@ package application;
 
 
 public class Enseignants {
-    public String idEnseignant;
-    public String idAffectation;
+    private String idEnseignant;
+    private String idAffectation;
 
     String getIdEnseignant() {
         return this.idEnseignant;

@@ -2,8 +2,8 @@ package application;
 
 
 public class Agents {
-    public String idAgent;
-    public String idAffectation;
+    private String idAgent;
+    private String idAffectation;
 
     String getIdAgent() {
         return this.idAgent;

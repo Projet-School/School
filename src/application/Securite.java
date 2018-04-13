@@ -2,8 +2,8 @@ package application;
 
 
 public class Securite {
-    public String idSecurite;
-    public String idAffectation;
+    private String idSecurite;
+    private String idAffectation;
 
     String getIdSecurite() {
         return this.idSecurite;

@@ -2,8 +2,8 @@ package application;
 
 
 public class Modules {
-    public String idModule;
-    public String libelModule;
+    private String idModule;
+    private String libelModule;
 
     String getIdModule() {
         return this.idModule;

@@ -2,11 +2,11 @@ package application;
 
 
 public class Lecons {
-    public String idLecon;
-    public String idSupport;
-    public String libelLecon;
-    public String pagDebLecon;
-    public String pagFinLecon;
+    private String idLecon;
+    private String idSupport;
+    private String libelLecon;
+    private String pagDebLecon;
+    private String pagFinLecon;
 
     String getIdLecon() {
         return this.idLecon;

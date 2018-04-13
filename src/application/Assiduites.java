@@ -2,13 +2,13 @@ package application;
 
 
 public class Assiduites {
-    public String idAssiduite;
-    public String idInscription;
-    public String idSeance;
-    public String etatAssiduite;
-    public String dateRelancAssiduite;
-    public String commAssiduite;
-    public String docAssiduite;
+    private String idAssiduite;
+    private String idInscription;
+    private String idSeance;
+    private String etatAssiduite;
+    private String dateRelancAssiduite;
+    private String commAssiduite;
+    private String docAssiduite;
 
     String getIdAssiduite() {
         return this.idAssiduite;

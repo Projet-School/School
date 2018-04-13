@@ -1,14 +1,14 @@
 package application;
 
 public class Adresses {
-    public String idAdresse;
-    public String idIndividu;
-    public String batAdresse;
-    public String noAdresse;
-    public String rueAdresse;
-    public String cpAdresse;
-    public String villeAdresse;
-    public String paysAdresse;
+    private String idAdresse;
+    private String idIndividu;
+    private String batAdresse;
+    private String noAdresse;
+    private String rueAdresse;
+    private String cpAdresse;
+    private String villeAdresse;
+    private String paysAdresse;
 
     String getIdAdresse() {
         return this.idAdresse;

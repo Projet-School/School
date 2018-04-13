@@ -2,8 +2,8 @@ package application;
 
 
 public class Annees {
-    public String idAnee;
-    public String nomAnnee;
+    private String idAnee;
+    private String nomAnnee;
 
     String getIdAnee() {
         return this.idAnee;

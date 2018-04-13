@@ -2,21 +2,21 @@ package application;
 
 
 public class Paiements {
-    public String idPaiement;
-    public String idInscription;
-    public String idTarifs;
-    public String nbrSessionPaiement;
-    public String nbrMatierePaiement;
-    public String montantPaiement;
-    public String modePaiement;
-    public String datePaiement;
-    public String trigrPaiement;
-    public String dateEncais1Paiement;
-    public String dateEncais2Paiement;
-    public String dateEncais3Paiement;
-    public String trigrEncaisPaiement;
-    public String dateTransfPaiement;
-    public String trigrTransfPaiement;
+    private String idPaiement;
+    private String idInscription;
+    private String idTarifs;
+    private String nbrSessionPaiement;
+    private String nbrMatierePaiement;
+    private String montantPaiement;
+    private String modePaiement;
+    private String datePaiement;
+    private String trigrPaiement;
+    private String dateEncais1Paiement;
+    private String dateEncais2Paiement;
+    private String dateEncais3Paiement;
+    private String trigrEncaisPaiement;
+    private String dateTransfPaiement;
+    private String trigrTransfPaiement;
 
     void setIdPaiement(String value) {
         this.idPaiement = value;

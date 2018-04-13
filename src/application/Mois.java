@@ -2,8 +2,8 @@ package application;
 
 
 public class Mois {
-    public String idMois;
-    public String nomMois;
+    private String idMois;
+    private String nomMois;
 
     String getIdMois() {
         return this.idMois;

@@ -2,10 +2,10 @@ package application;
 
 
 public class Salles {
-    public String idSalle;
-    public String libelSalle;
-    public String capaSalle;
-    public String dispoSalle;
+    private String idSalle;
+    private String libelSalle;
+    private String capaSalle;
+    private String dispoSalle;
 
     void setIdSalle(String value) {
         this.idSalle = value;

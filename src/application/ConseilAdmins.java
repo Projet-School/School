@@ -2,12 +2,12 @@ package application;
 
 
 public class ConseilAdmins {
-    public String idConseilAdmin;
-    public String idReunion;
-    public String libelConseilAdmin;
-    public String objetConseilAdmin;
-    public String decisConseilAdmin;
-    public String PVConseilAdmin;
+    private String idConseilAdmin;
+    private String idReunion;
+    private String libelConseilAdmin;
+    private String objetConseilAdmin;
+    private String decisConseilAdmin;
+    private String PVConseilAdmin;
 
     String getIdConseilAdmin() {
         return this.idConseilAdmin;

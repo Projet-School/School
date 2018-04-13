@@ -2,17 +2,17 @@ package application;
 
 
 public class Contrats {
-    public String idContrat;
-    public String idStatut;
-    public String idFonction;
-    public String idIndividu;
-    public String libelContrat;
-    public String dateEntrContrat;
-    public String dateSortContrat;
-    public String salaireContrat;
-    public String indemniteContrat;
-    public String materielContrat;
-    public String contratContrat;
+    private String idContrat;
+    private String idStatut;
+    private String idFonction;
+    private String idIndividu;
+    private String libelContrat;
+    private String dateEntrContrat;
+    private String dateSortContrat;
+    private String salaireContrat;
+    private String indemniteContrat;
+    private String materielContrat;
+    private String contratContrat;
 
     String getIdContrat() {
         return this.idContrat;

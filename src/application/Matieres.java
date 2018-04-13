@@ -2,9 +2,9 @@ package application;
 
 
 public class Matieres {
-    public String idMatiere;
-    public String idModule;
-    public String libelMatiere;
+    private String idMatiere;
+    private String idModule;
+    private String libelMatiere;
 
     String getIdMatiere() {
         return this.idMatiere;

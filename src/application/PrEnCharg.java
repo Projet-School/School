@@ -2,11 +2,11 @@ package application;
 
 
 public class PrEnCharg {
-    public String idPrEnCharg;
-    public String libelPrEnCharg;
-    public String montantPrEnCharg;
-    public String referPrEnCharg;
-    public String validPrEnCharg;
+    private String idPrEnCharg;
+    private String libelPrEnCharg;
+    private String montantPrEnCharg;
+    private String referPrEnCharg;
+    private String validPrEnCharg;
 
     String getIdPrEnCharg() {
         return this.idPrEnCharg;

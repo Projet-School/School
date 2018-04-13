@@ -2,12 +2,12 @@ package application;
 
 
 public class Evaluations {
-    public String idEvaluation;
-    public String idAssiduite;
-    public String idExamen;
-    public String auteurEvaluation;
-    public String noteEvaluation;
-    public String apprecEvaluation;
+    private String idEvaluation;
+    private String idAssiduite;
+    private String idExamen;
+    private String auteurEvaluation;
+    private String noteEvaluation;
+    private String apprecEvaluation;
 
     void setIdEvaluation(String value) {
         this.idEvaluation = value;

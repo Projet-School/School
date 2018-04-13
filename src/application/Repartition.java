@@ -2,13 +2,13 @@ package application;
 
 
 public class Repartition {
-    public String idGroupe;
-    public String idSession;
-    public String idPlanning;
-    public String idSalle;
-    public String idModule;
-    public String idInscription;
-    public String idEtudiant;
+    private String idGroupe;
+    private String idSession;
+    private String idPlanning;
+    private String idSalle;
+    private String idModule;
+    private String idInscription;
+    private String idEtudiant;
 
     String getIdGroupe() {
         return this.idGroupe;

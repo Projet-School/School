@@ -2,8 +2,8 @@ package application;
 
 
 public class Frequences {
-    public String idFrequence;
-    public String libelFrequence;
+    private String idFrequence;
+    private String libelFrequence;
 
     String getLibelFrequence() {
         return this.libelFrequence;

@@ -2,8 +2,8 @@ package application;
 
 
 public class Directeur {
-    public String idDirecteur;
-    public String idAffectation;
+    private String idDirecteur;
+    private String idAffectation;
 
     String getIdDirecteur() {
         return this.idDirecteur;
