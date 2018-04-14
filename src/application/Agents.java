@@ -1,23 +1,29 @@
 package application;
 
 
-public class Agents {
-    private String idAgent;
+public class Agents extends Individus{
+	private String idAgent;
     private String idAffectation;
-
-    String getIdAgent() {
+    
+    public Agents() {
+		super();
+		idAgent = null;
+		idAffectation = null;
+	}
+    
+    public String getIdAgent() {
         return this.idAgent;
     }
 
-    void setIdAgent(String value) {
+    public void setIdAgent(String value) {
         this.idAgent = value;
     }
 
-    void setIdAffectation(String value) {
+    public void setIdAffectation(String value) {
         this.idAffectation = value;
     }
 
-    String getIdAffectation() {
+    public String getIdAffectation() {
         return this.idAffectation;
     }
 

@@ -1,23 +1,29 @@
 package application;
 
 
-public class Directeur {
+public class Directeur extends Individus{
     private String idDirecteur;
     private String idAffectation;
 
-    String getIdDirecteur() {
+    public Directeur(){
+    	super();
+    	idDirecteur = null;
+    	idAffectation = null;
+    }
+    
+    public String getIdDirecteur() {
         return this.idDirecteur;
     }
 
-    void setIdDirecteur(String value) {
+    public void setIdDirecteur(String value) {
         this.idDirecteur = value;
     }
 
-    String getIdAffectation() {
+    public String getIdAffectation() {
         return this.idAffectation;
     }
 
-    void setIdAffectation(String value) {
+    public void setIdAffectation(String value) {
         this.idAffectation = value;
     }
 

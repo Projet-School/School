@@ -5,136 +5,154 @@ public abstract class Individus {
     private String idIndividu;
     private String nomIndividu;
     private String prenomIndividu;
-    private String generIndividu;
+    private String genreIndividu;
     private String datNaisIndividu;
-    private String lieuNaisIndividu;
+    private Adresses lieuNaisIndividu;
     private String nivEtudIndividu;
-    private String domEtudIndividu;
-    private String profIndividu;
+    private Adresses domEtudIndividu;
+    private Individus profIndividu;
     private String domCompetIndividu;
     private String langMatIndividu;
     private String langParlIndividu;
-    private String photoIndividu;
-    private String rectoPIDIndividu;
-    private String versoPIDIndividu;
-
-    String getIdIndividu() {
+    private String photoIndividu; //bonus
+    private String rectoPIDIndividu; //bonus
+    private String versoPIDIndividu; //bonus
+    
+    public Individus(){
+   	 idIndividu = null;
+   	 nomIndividu = null;
+   	 prenomIndividu = null;
+   	 genreIndividu = null;
+   	 datNaisIndividu = null;
+   	 lieuNaisIndividu = null;
+   	 nivEtudIndividu = null;
+   	 domEtudIndividu = null;
+   	 profIndividu = null;
+   	 domCompetIndividu = null;
+   	 langMatIndividu = null;
+   	 langParlIndividu = null;
+   	 photoIndividu = null;
+   	 rectoPIDIndividu = null;
+   	 versoPIDIndividu = null;
+   }
+    
+    public String getIdIndividu() {
         return this.idIndividu;
     }
 
-    void setIdIndividu(String value) {
+    public void setIdIndividu(String value) {
         this.idIndividu = value;
     }
 
-    String getNomIndividu() {
+    public String getNomIndividu() {
         return this.nomIndividu;
     }
 
-    void setNomIndividu(String value) {
+    public void setNomIndividu(String value) {
         this.nomIndividu = value;
     }
 
-    void setDatNaisIndividu(String value) {
+    public void setDatNaisIndividu(String value) {
         this.datNaisIndividu = value;
     }
 
-    String getDatNaisIndividu() {
+    public String getDatNaisIndividu() {
         return this.datNaisIndividu;
     }
 
-    String getGenerIndividu() {
-        return this.generIndividu;
+    public String getGenerIndividu() {
+        return this.genreIndividu;
     }
 
-    void setGenerIndividu(String value) {
-        this.generIndividu = value;
+    public void setGenerIndividu(String value) {
+        this.genreIndividu = value;
     }
 
-    String getPrenomIndividu() {
+    public String getPrenomIndividu() {
         return this.prenomIndividu;
     }
 
-    void setPrenomIndividu(String value) {
+    public void setPrenomIndividu(String value) {
         this.prenomIndividu = value;
     }
 
-    String getDomEtudIndividu() {
+    public Adresses getDomEtudIndividu() {
         return this.domEtudIndividu;
     }
 
-    void setDomEtudIndividu(String value) {
+    public void setDomEtudIndividu(Adresses value) {
         this.domEtudIndividu = value;
     }
 
-    String getVersoPIDIndividu() {
+    public String getVersoPIDIndividu() {
         return this.versoPIDIndividu;
     }
 
-    void setVersoPIDIndividu(String value) {
+    public void setVersoPIDIndividu(String value) {
         this.versoPIDIndividu = value;
     }
 
-    String getRectoPIDIndividu() {
+    public String getRectoPIDIndividu() {
         return this.rectoPIDIndividu;
     }
 
-    void setRectoPIDIndividu(String value) {
+    public void setRectoPIDIndividu(String value) {
         this.rectoPIDIndividu = value;
     }
 
-    void setPhotoIndividu(String value) {
+    public void setPhotoIndividu(String value) {
         this.photoIndividu = value;
     }
 
-    String getPhotoIndividu() {
+    public String getPhotoIndividu() {
         return this.photoIndividu;
     }
 
-    void setLangParlIndividu(String value) {
+    public void setLangParlIndividu(String value) {
         this.langParlIndividu = value;
     }
 
-    String getLangParlIndividu() {
+    public String getLangParlIndividu() {
         return this.langParlIndividu;
     }
 
-    void setLangMatIndividu(String value) {
+    public void setLangMatIndividu(String value) {
         this.langMatIndividu = value;
     }
 
-    String getLangMatIndividu() {
+    public String getLangMatIndividu() {
         return this.langMatIndividu;
     }
 
-    String getDomCompetIndividu() {
+    public String getDomCompetIndividu() {
         return this.domCompetIndividu;
     }
 
-    void setDomCompetIndividu(String value) {
+    public void setDomCompetIndividu(String value) {
         this.domCompetIndividu = value;
     }
 
-    String getProfIndividu() {
+    public Individus getProfIndividu() {
         return this.profIndividu;
     }
 
-    void setProfIndividu(String value) {
+    public void setProfIndividu(Individus value) {
         this.profIndividu = value;
     }
 
-    String getNivEtudIndividu() {
+    public String getNivEtudIndividu() {
         return this.nivEtudIndividu;
     }
 
-    void setNivEtudIndividu(String value) {
+    public void setNivEtudIndividu(String value) {
         this.nivEtudIndividu = value;
     }
 
-    String getLieuNaisIndividu() {
+    public Adresses getLieuNaisIndividu() {
         return this.lieuNaisIndividu;
     }
 
-    void setLieuNaisIndividu(String value) {
+    public void setLieuNaisIndividu(Adresses value) {
         this.lieuNaisIndividu = value;
     }
 

@@ -1,23 +1,29 @@
 package application;
 
 
-public class Entretien {
+public class Entretien extends Individus{
     private String idEntretien;
     private String idAffectation;
 
-    void setIdEntretien(String value) {
+    public Entretien(){
+    	super();
+    	idEntretien = null;
+    	idAffectation = null;
+    }
+    
+    public void setIdEntretien(String value) {
         this.idEntretien = value;
     }
 
-    String getIdEntretien() {
+    public String getIdEntretien() {
         return this.idEntretien;
     }
 
-    void setIdAffectation(String value) {
+    public void setIdAffectation(String value) {
         this.idAffectation = value;
     }
 
-    String getIdAffectation() {
+    public String getIdAffectation() {
         return this.idAffectation;
     }
 

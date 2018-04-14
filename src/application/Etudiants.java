@@ -1,23 +1,29 @@
 package application;
 
 
-public class Etudiants {
+public class Etudiants extends Individus{
     private String idEtudiant;
     private String idAffectation;
 
-    String getIdEtudiant() {
+    public Etudiants(){
+    	super();
+    	idEtudiant = null;
+    	idAffectation = null;
+    }
+    
+    public String getIdEtudiant() {
         return this.idEtudiant;
     }
 
-    void setIdEtudiant(String value) {
+    public void setIdEtudiant(String value) {
         this.idEtudiant = value;
     }
 
-    void setIdAffectation(String value) {
+    public void setIdAffectation(String value) {
         this.idAffectation = value;
     }
 
-    String getIdAffectation() {
+    public String getIdAffectation() {
         return this.idAffectation;
     }
 

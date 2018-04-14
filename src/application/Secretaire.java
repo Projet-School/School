@@ -1,23 +1,29 @@
 package application;
 
 
-public class Secretaire {
-    private String idSecretaire;
+public class Secretaire extends Individus{
+	private String idSecretaire;
     private String idAffectation;
-
-    String getIdSecretaire() {
+    
+    public Secretaire() {
+		super();
+		idSecretaire = null;
+		idAffectation = null;
+	}
+    
+    public String getIdSecretaire() {
         return this.idSecretaire;
     }
 
-    void setIdSecretaire(String value) {
+    public void setIdSecretaire(String value) {
         this.idSecretaire = value;
     }
 
-    void setIdAffectation(String value) {
+    public void setIdAffectation(String value) {
         this.idAffectation = value;
     }
 
-    String getIdAffectation() {
+    public String getIdAffectation() {
         return this.idAffectation;
     }
 
