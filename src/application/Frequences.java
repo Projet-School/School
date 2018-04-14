@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class Frequences {
     private String idFrequence;
     private String libelFrequence;

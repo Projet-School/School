@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class Tarifs {
     private String idTarif;
     private String fraisInscTarif;

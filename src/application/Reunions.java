@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class Reunions {
     private String idReunion;
     private String idSeance;

@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class plannings {
     private String idPlanning;
     private String horLunPlanning;

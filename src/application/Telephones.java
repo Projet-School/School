@@ -1,11 +1,11 @@
 package application;
 
-
+//classe non-utilisée
 public class Telephones {
     private String idTelephone;
     private String idIndividu;
     private String mobileTelephone;
-    private String fiixeTelephone;
+    private String fixeTelephone;
     private String prenomContactTelephone;
     private String nomContactTelephone;
     private String mobileContactTelephone;
@@ -44,12 +44,12 @@ public class Telephones {
         this.mobileTelephone = value;
     }
 
-    String getFiixeTelephone() {
-        return this.fiixeTelephone;
+    String getFixeTelephone() {
+        return this.fixeTelephone;
     }
 
-    void setFiixeTelephone(String value) {
-        this.fiixeTelephone = value;
+    void setFixeTelephone(String value) {
+        this.fixeTelephone = value;
     }
 
     String getPrenomContactTelephone() {

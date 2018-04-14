@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class Charges {
     private String idCharge;
     private String nomCharge;

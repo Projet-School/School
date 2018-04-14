@@ -1,6 +1,6 @@
 package application;
 
-//classe 
+//classe non-utilisée
 public class Fins {
     private String idFin;
     private String heureFin;

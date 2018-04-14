@@ -1,7 +1,7 @@
 package application;
 
 
-
+//classe non-utilisée
 public class Horaires {
     private String idHoraire;
     private String isSession;

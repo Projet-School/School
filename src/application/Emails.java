@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class Emails {
     private String idEmail;
     private String idIndividu;

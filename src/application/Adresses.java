@@ -10,7 +10,20 @@ public class Adresses {
     private String villeAdresse;
     private String paysAdresse;
 
-    String getIdAdresse() {
+    public Adresses(String idAdresse, String idIndividu, String batAdresse, String noAdresse, String rueAdresse,
+			String cpAdresse, String villeAdresse, String paysAdresse) {
+		super();
+		this.idAdresse = idAdresse;
+		this.idIndividu = idIndividu;
+		this.batAdresse = batAdresse;
+		this.noAdresse = noAdresse;
+		this.rueAdresse = rueAdresse;
+		this.cpAdresse = cpAdresse;
+		this.villeAdresse = villeAdresse;
+		this.paysAdresse = paysAdresse;
+	}
+
+	String getIdAdresse() {
         return this.idAdresse;
     }
 

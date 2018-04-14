@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class ConseilAdmins {
     private String idConseilAdmin;
     private String idReunion;

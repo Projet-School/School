@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class Repartition {
     private String idGroupe;
     private String idSession;

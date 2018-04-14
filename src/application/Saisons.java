@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class Saisons {
     private String idSaison;
     private String nomSaison;

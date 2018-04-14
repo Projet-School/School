@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class Jours {
     private String idJours;
     private String nomJours;

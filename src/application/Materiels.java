@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class Materiels {
     private String idMateriel;
     private String libelMateriel;

@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class Semaines {
     private String idSemaine;
     private String noSemaine;

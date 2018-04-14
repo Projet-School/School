@@ -1,6 +1,6 @@
 package application;
 
-
+//classe non-utilisée
 public class PrEnCharg {
     private String idPrEnCharg;
     private String libelPrEnCharg;
