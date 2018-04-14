@@ -44,7 +44,7 @@
                   <Insets bottom="20.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="buttonSign" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" mnemonicParsing="false" onAction="#connexionAction" prefHeight="40.0" prefWidth="200.0" text="Inscris toi !" textAlignment="JUSTIFY" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
+            <Button fx:id="buttonSign" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" mnemonicParsing="false" onAction="#connexionAction" prefHeight="40.0" prefWidth="200.0" text="Inscris-toi !" textAlignment="JUSTIFY" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>

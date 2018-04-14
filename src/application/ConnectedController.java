@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -13,10 +13,12 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 
 // la classe controller de la page Connected.fxml
 public class ConnectedController implements Initializable {
 
+	//// commun à chaque fenêtre des espaces
 	@FXML AnchorPane leftPane;
 	@FXML Button menu;
 	@FXML Button dec;
@@ -24,12 +26,13 @@ public class ConnectedController implements Initializable {
 	@FXML Button infos;
 	@FXML Button cours;
 	@FXML Button planning;
+	boolean vis = false;
+	////
 	
 	@FXML Button espEtudiant;
 	@FXML Button espEnseignant;
 	@FXML Button espAdmin;
 	@FXML Button espCompta;
-	boolean vis = false;
 	
 	// Méthode pour initialiser la page avec les icones
 	public void initialize(URL location, ResourceBundle resources) {
@@ -41,6 +44,70 @@ public class ConnectedController implements Initializable {
 		infos.setVisible(vis);
 		cours.setVisible(vis);
 		planning.setVisible(vis);
+		
+		// Evènement souris entrée et sortie pour l'espace étudiant
+		espEtudiant.setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				espEtudiant.setStyle("-fx-background-color: black");
+				espEtudiant.setTextFill(Color.ORANGE);
+			}
+		});
+		espEtudiant.setOnMouseExited(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				espEtudiant.setStyle("-fx-background-color: orange");
+				espEtudiant.setTextFill(Color.BLACK);
+			}
+		});
+		
+		// Evènement souris entrée et sortie pour l'espace enseignant
+		espEnseignant.setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				espEnseignant.setStyle("-fx-background-color: black");
+				espEnseignant.setTextFill(Color.ORANGE);
+			}
+		});
+		espEnseignant.setOnMouseExited(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				espEnseignant.setStyle("-fx-background-color: orange");
+				espEnseignant.setTextFill(Color.BLACK);
+			}
+		});
+		
+		// Evènement souris entrée et sortie pour l'espace admin
+		espAdmin.setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				espAdmin.setStyle("-fx-background-color: black");
+				espAdmin.setTextFill(Color.ORANGE);
+			}
+		});
+		espAdmin.setOnMouseExited(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				espAdmin.setStyle("-fx-background-color: orange");
+				espAdmin.setTextFill(Color.BLACK);
+			}
+		});
+		
+		// Evènement souris entrée et sortie pour l'espace compta
+		espCompta.setOnMouseEntered(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				espCompta.setStyle("-fx-background-color: black");
+				espCompta.setTextFill(Color.ORANGE);
+			}
+		});
+		espCompta.setOnMouseExited(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				espCompta.setStyle("-fx-background-color: orange");
+				espCompta.setTextFill(Color.BLACK);
+			}
+		});
 	}
 
 	// méthode pour afficher ou non le menu
@@ -120,15 +187,37 @@ public class ConnectedController implements Initializable {
 		if(event.getSource() == espCompta) {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Information");
-			alert.setHeaderText("Cette espace sera disponible plus tard");
+			alert.setHeaderText("Cette espace sera disponible très prochainement.");
 			alert.showAndWait();
 		}
 	}
 	
+	// méthode pour afficher la page de modification des informations
 	@FXML
-	private void mouseAction(Event e) {
-		if(e.getEventType() == MouseEvent.MOUSE_ENTERED) {
-			//
+	private void changeInfos(ActionEvent event) {
+		try {
+			Main.changeScene("modifInfos.fxml");
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+			System.out.println("Impossible d'afficher la page de modification des infos !");
 		}
+	}
+	
+	// méthode pour afficher la page des cours
+	@FXML
+	private void coursAction(ActionEvent event) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Information");
+		alert.setHeaderText("Vous n'avez aucuns cours à télécharger");
+		alert.showAndWait();
+	}
+	
+	// méthode pour afficher la page des examens avec dates
+	@FXML
+	private void examenAction(ActionEvent event) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Information");
+		alert.setHeaderText("Vous n'avez pas d'examens pendant les prochains mois");
+		alert.showAndWait();
 	}
 }

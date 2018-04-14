@@ -8,8 +8,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-
-
 // classe controller du fichier SignIn.fxml
 public class SignInController {
 
@@ -23,14 +21,14 @@ public class SignInController {
 	@FXML private TextField lieuNaiss;
 	@FXML private TextField nivEtude; 
 	@FXML private TextField domEtude; 
-	@FXML private TextField langParle; 
+	@FXML private ChoiceBox<String> function; 
 	@FXML private Button buttonSignIn;
 	@FXML private Button buttonHome;
 	
-	// méthode pour s'inscrire
+	// méthode pour inscrire une personne
 	@FXML
 	private void signInAction(ActionEvent event) {
-		if(id.getText().isEmpty() || mail.getText().isEmpty() || password.getText().isEmpty() || nom.getText().isEmpty() || prenom.getText().isEmpty() || dateNaiss.getText().isEmpty() || lieuNaiss.getText().isEmpty() || langParle.getText().isEmpty() || nivEtude.getText().isEmpty() || domEtude.getText().isEmpty() || genre.getSelectionModel().isEmpty()) {
+		if(id.getText().isEmpty() || mail.getText().isEmpty() || password.getText().isEmpty() || nom.getText().isEmpty() || prenom.getText().isEmpty() || dateNaiss.getText().isEmpty() || lieuNaiss.getText().isEmpty() || nivEtude.getText().isEmpty() || domEtude.getText().isEmpty() || genre.getSelectionModel().isEmpty() || function.getSelectionModel().isEmpty()) {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Information");
 			alert.setHeaderText("Il manque des informations !");
@@ -64,7 +62,7 @@ public class SignInController {
 	@FXML
 	private void keyAction(KeyEvent e) {
 		if(e.getCode() == KeyCode.ENTER) {
-			if(id.getText().isEmpty() || mail.getText().isEmpty() || password.getText().isEmpty() || nom.getText().isEmpty() || prenom.getText().isEmpty() || dateNaiss.getText().isEmpty() || lieuNaiss.getText().isEmpty() || langParle.getText().isEmpty() || nivEtude.getText().isEmpty() || domEtude.getText().isEmpty() || genre.getSelectionModel().isEmpty()) {
+			if(id.getText().isEmpty() || mail.getText().isEmpty() || password.getText().isEmpty() || nom.getText().isEmpty() || prenom.getText().isEmpty() || dateNaiss.getText().isEmpty() || lieuNaiss.getText().isEmpty() || nivEtude.getText().isEmpty() || domEtude.getText().isEmpty() || genre.getSelectionModel().isEmpty() || function.getSelectionModel().isEmpty()) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Information");
 				alert.setHeaderText("Il manque des informations !");

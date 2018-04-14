@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #C0C0C0;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ConnectedController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #C0C0C0;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
    <children>
       <Label focusTraversable="false" prefHeight="50.0" style="-fx-background-color: grey;" text="Bienvenue sur votre espace" textFill="#ffffffc0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <padding>
@@ -30,12 +30,12 @@
                         <Font name="Arial Black" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="planning" focusTraversable="false" layoutY="180.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Planning">
+                  <Button fx:id="planning" focusTraversable="false" layoutY="180.0" mnemonicParsing="false" onAction="#examenAction" prefHeight="60.0" prefWidth="200.0" text="Planning d'examen">
                      <font>
                         <Font name="Arial Black" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="cours" focusTraversable="false" layoutY="120.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Mes cours">
+                  <Button fx:id="cours" focusTraversable="false" layoutY="120.0" mnemonicParsing="false" onAction="#coursAction" prefHeight="60.0" prefWidth="200.0" text="Mes cours">
                      <font>
                         <Font name="Arial Black" size="14.0" />
                      </font>
@@ -60,7 +60,7 @@
                       <RowConstraints minHeight="50.0" percentHeight="25.0" prefHeight="150.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="espEtudiant" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Espace Etudiant" wrapText="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <Button fx:id="addAgent" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Ajouter un étudiant" wrapText="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <GridPane.margin>
                               <Insets bottom="20.0" left="20.0" right="20.0" />
                            </GridPane.margin>
@@ -68,7 +68,7 @@
                               <Font name="Arial Black" size="24.0" />
                            </font>
                         </Button>
-                        <Button fx:id="espEnseignant" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Espace Enseignant" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <Button fx:id="modifAgent" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Modifier un étudiant" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <GridPane.margin>
                               <Insets bottom="20.0" left="20.0" right="20.0" />
                            </GridPane.margin>
@@ -76,21 +76,40 @@
                               <Font name="Arial Black" size="24.0" />
                            </font>
                         </Button>
-                        <Button fx:id="espAdmin" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Espace Administratif" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <GridPane.margin>
-                              <Insets left="20.0" right="20.0" top="20.0" />
-                           </GridPane.margin>
+                        <Button fx:id="addCours" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Ajouter un cours" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <font>
                               <Font name="Arial Black" size="24.0" />
                            </font>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" />
+                           </GridPane.margin>
                         </Button>
-                        <Button fx:id="espCompta" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Espace Comptabilité" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <GridPane.margin>
-                              <Insets left="20.0" right="20.0" top="20.0" />
-                           </GridPane.margin>
+                        <Button fx:id="suppCours" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Supprimer un cours" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <font>
                               <Font name="Arial Black" size="24.0" />
                            </font>
+                           <GridPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="addExam" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Ajouter un examen" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="Arial Black" size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="suppExam" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Supprimer un examen" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="Arial Black" size="24.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" />
+                           </GridPane.margin>
                         </Button>
                      </children>
                   </GridPane>
@@ -99,4 +118,3 @@
       </HBox>
    </children>
 </AnchorPane>
-
