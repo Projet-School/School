@@ -5,19 +5,19 @@ public class Fonctions {
     private String idFonction;
     private String libelFonction;
 
-    void setLibelFonction(String value) {
+    public void setLibelFonction(String value) {
         this.libelFonction = value;
     }
 
-    String getLibelFonction() {
+    public String getLibelFonction() {
         return this.libelFonction;
     }
 
-    void setIdFonction(String value) {
+    public void setIdFonction(String value) {
         this.idFonction = value;
     }
 
-    String getIdFonction() {
+    public String getIdFonction() {
         return this.idFonction;
     }
 

@@ -1,23 +1,29 @@
 package application;
 
 
-public class Securite {
+public class Securite extends Individus{
     private String idSecurite;
     private String idAffectation;
 
-    String getIdSecurite() {
+    public Securite(){
+    	super();
+    	idSecurite = null;
+    	idAffectation = null;
+    }
+    
+    public String getIdSecurite() {
         return this.idSecurite;
     }
 
-    void setIdSecurite(String value) {
+    public void setIdSecurite(String value) {
         this.idSecurite = value;
     }
 
-    String getIdAffectation() {
+    public String getIdAffectation() {
         return this.idAffectation;
     }
 
-    void setIdAffectation(String value) {
+    public void setIdAffectation(String value) {
         this.idAffectation = value;
     }
 

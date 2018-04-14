@@ -1,6 +1,6 @@
 package application;
 
-
+//Classe non-utilisée.
 public class Statuts {
     private String idStatut;
     private String typeStatut;

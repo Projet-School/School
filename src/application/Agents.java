@@ -1,6 +1,6 @@
 package application;
 
-
+//Classe non-utilisée.
 public class Agents extends Individus{
 	private String idAgent;
     private String idAffectation;

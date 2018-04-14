@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 
 public class Main extends Application {
 	public static Stage stage;
+	public Individus utilisateur = new Individus();
 	
 	@Override
 	public void start(Stage primaryStage) {                 

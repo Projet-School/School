@@ -3,102 +3,116 @@ package application;
 
 public class Contrats {
     private String idContrat;
-    private String idStatut;
+    //private String idStatut;//inutilisé
     private String idFonction;
     private String idIndividu;
     private String libelContrat;
-    private String dateEntrContrat;
-    private String dateSortContrat;
+    private String dateEntrContrat;//non implementé
+    private String dateSortContrat;//non implementé
     private String salaireContrat;
     private String indemniteContrat;
     private String materielContrat;
-    private String contratContrat;
+    private String contratContrat;//non implementé
 
-    String getIdContrat() {
+    public Contrats(String idContrat, String idFonction, String idIndividu, String libelContrat, String salaireContrat, String indemniteContrat, String materielContrat) {
+		super();
+		this.idContrat = idContrat;
+		this.idFonction = idFonction;
+		this.idIndividu = idIndividu;
+		this.libelContrat = libelContrat;
+		this.dateEntrContrat = "";
+		this.dateSortContrat = "";
+		this.salaireContrat = salaireContrat;
+		this.indemniteContrat = indemniteContrat;
+		this.materielContrat = materielContrat;
+		this.contratContrat = "";
+	}
+
+    public String getIdContrat() {
         return this.idContrat;
     }
 
-    void setIdContrat(String value) {
+    public void setIdContrat(String value) {
         this.idContrat = value;
     }
 
-    String getIdStatut() {
+    /*public String getIdStatut() {
         return this.idStatut;
     }
 
-    void setIdStatut(String value) {
+    public void setIdStatut(String value) {
         this.idStatut = value;
-    }
+    }*/
 
-    String getIdFonction() {
+    public String getIdFonction() {
         return this.idFonction;
     }
 
-    void setIdFonction(String value) {
+    public void setIdFonction(String value) {
         this.idFonction = value;
     }
 
-    String getIdIndividu() {
+    public String getIdIndividu() {
         return this.idIndividu;
     }
 
-    void setIdIndividu(String value) {
+    public void setIdIndividu(String value) {
         this.idIndividu = value;
     }
 
-    String getLibelContrat() {
+    public String getLibelContrat() {
         return this.libelContrat;
     }
 
-    void setLibelContrat(String value) {
+    public void setLibelContrat(String value) {
         this.libelContrat = value;
     }
 
-    String getDateEntrContrat() {
+    public String getDateEntrContrat() {
         return this.dateEntrContrat;
     }
 
-    void setDateEntrContrat(String value) {
+    public void setDateEntrContrat(String value) {
         this.dateEntrContrat = value;
     }
 
-    String getDateSortContrat() {
+    public String getDateSortContrat() {
         return this.dateSortContrat;
     }
 
-    void setDateSortContrat(String value) {
+    public void setDateSortContrat(String value) {
         this.dateSortContrat = value;
     }
 
-    String getSalaireContrat() {
+    public String getSalaireContrat() {
         return this.salaireContrat;
     }
 
-    void setSalaireContrat(String value) {
+    public void setSalaireContrat(String value) {
         this.salaireContrat = value;
     }
 
-    String getIndemniteContrat() {
+    public String getIndemniteContrat() {
         return this.indemniteContrat;
     }
 
-    void setIndemniteContrat(String value) {
+    public void setIndemniteContrat(String value) {
         this.indemniteContrat = value;
     }
 
-    String getMaterielContrat() {
+    public String getMaterielContrat() {
         return this.materielContrat;
     }
 
-    void setMaterielContrat(String value) {
+    public void setMaterielContrat(String value) {
         this.materielContrat = value;
     }
 
-    String getContratContrat() {
+    public String getContratContrat() {
         return this.contratContrat;
     }
 
-    void setContratContrat(String value) {
+    public void setContratContrat(String value) {
         this.contratContrat = value;
     }
 

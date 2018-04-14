@@ -1,7 +1,7 @@
 package application;
 
 
-public abstract class Individus {
+public class Individus {
     private String idIndividu;
     private String nomIndividu;
     private String prenomIndividu;

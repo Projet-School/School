@@ -1,6 +1,6 @@
 package application;
 
-
+//classe 
 public class Fins {
     private String idFin;
     private String heureFin;

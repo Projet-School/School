@@ -3,101 +3,116 @@ package application;
 public class Affectations {
     private String idAffectation;
     private String idContrat;
-    private String trigrAffectation;//je ne sais pas à quoi ça correspond
+    //private String trigrAffectation;//je ne sais pas à quoi ça correspond, inutilisé
     private String loginAffectation;
     private String motPasseAffectation;
-    private String dateEntrAffectation;
-    private String dateSortAffectation;
+    private String dateEntrAffectation;//non implementé
+    private String dateSortAffectation;//non implementé
     private String commAffectation;
-    private String ficheAffectation;
+    private String ficheAffectation;//non implementé
     private String referentAffectation;
-    private String validAffectation;
+    private String validAffectation;//non implementé
+    
+    public Affectations(String idAffectation, String idContrat, String loginAffectation,
+			String motPasseAffectation, String commAffectation, String referentAffectation) {
+		super();
+		this.idAffectation = idAffectation;
+		this.idContrat = idContrat;
+		this.loginAffectation = loginAffectation;
+		this.motPasseAffectation = motPasseAffectation;
+		this.dateEntrAffectation = "";
+		this.dateSortAffectation = "";
+		this.commAffectation = commAffectation;
+		this.ficheAffectation = "";
+		this.referentAffectation = referentAffectation;
+		this.validAffectation = "";
+	}
 
-    String getIdAffectation() {
+	public String getIdAffectation() {
         return this.idAffectation;
     }
 
-    void setIdAffectation(String value) {
+	public void setIdAffectation(String value) {
         this.idAffectation = value;
     }
 
-    String getIdContrat() {
+	public String getIdContrat() {
         return this.idContrat;
     }
 
-    void setIdContrat(String value) {
+	public void setIdContrat(String value) {
         this.idContrat = value;
     }
 
-    String getTrigrAffectation() {
+    /*public String getTrigrAffectation() {
         return this.trigrAffectation;
     }
 
-    void setTrigrAffectation(String value) {
+    public void setTrigrAffectation(String value) {
         this.trigrAffectation = value;
-    }
+    }*/
 
-    String getLoginAffectation() {
+	public String getLoginAffectation() {
         return this.loginAffectation;
     }
 
-    void setLoginAffectation(String value) {
+	public void setLoginAffectation(String value) {
         this.loginAffectation = value;
     }
 
-    String getMotPasseAffectation() {
+    public String getMotPasseAffectation() {
         return this.motPasseAffectation;
     }
 
-    void setMotPasseAffectation(String value) {
+    public void setMotPasseAffectation(String value) {
         this.motPasseAffectation = value;
     }
 
-    String getDateEntrAffectation() {
+    public String getDateEntrAffectation() {
         return this.dateEntrAffectation;
     }
 
-    void setDateEntrAffectation(String value) {
+    public void setDateEntrAffectation(String value) {
         this.dateEntrAffectation = value;
     }
 
-    String getDateSortAffectation() {
+    public String getDateSortAffectation() {
         return this.dateSortAffectation;
     }
 
-    void setDateSortAffectation(String value) {
+    public void setDateSortAffectation(String value) {
         this.dateSortAffectation = value;
     }
 
-    String getCommAffectation() {
+    public String getCommAffectation() {
         return this.commAffectation;
     }
 
-    void setCommAffectation(String value) {
+    public void setCommAffectation(String value) {
         this.commAffectation = value;
     }
 
-    String getFicheAffectation() {
+    public String getFicheAffectation() {
         return this.ficheAffectation;
     }
 
-    void setFicheAffectation(String value) {
+    public void setFicheAffectation(String value) {
         this.ficheAffectation = value;
     }
 
-    String getReferentAffectation() {
+    public String getReferentAffectation() {
         return this.referentAffectation;
     }
 
-    void setReferentAffectation(String value) {
+    public void setReferentAffectation(String value) {
         this.referentAffectation = value;
     }
 
-    String getValidAffectation() {
+    public String getValidAffectation() {
         return this.validAffectation;
     }
 
-    void setValidAffectation(String value) {
+    public void setValidAffectation(String value) {
         this.validAffectation = value;
     }
 
