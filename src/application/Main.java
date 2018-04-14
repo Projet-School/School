@@ -27,6 +27,7 @@ public class Main extends Application {
 		}
 	}
 	
+	// méthode pour changer de scene 
 	public static void changeScene(String sceneName) throws IOException {
 		Parent root = FXMLLoader.load(Main.class.getResource(sceneName));
 		stage.setScene(new Scene(root));

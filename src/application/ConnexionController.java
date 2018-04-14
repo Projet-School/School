@@ -4,39 +4,34 @@ import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import java.sql.Connection;
 import java.sql.Statement;
-
 import com.mysql.jdbc.PreparedStatement;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
-import javafx.scene.*;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 	 
 // le controller du fichier Connexion.fxml
 public class ConnexionController {
 	
-		@FXML
-		private TextField id;
+		@FXML private TextField id;
 		
-		@FXML
-		private PasswordField password;
+		@FXML private PasswordField password;
 		
-		@FXML
-		private Button but;
-		
-		@FXML
-		private Label error;
+		@FXML private Button buttonCon;
+		@FXML private Button buttonSign;
+		@FXML private Label error;
 	
 		private String url = "jdbc:mysql://localhost:3306/school?useSSL=false";
 		private String login = "root";
-		private String passwd = "";
+		//private String passwd = "";
+		private String passwd = "d";
 		Connection cn = null;
 		Statement st = null;
 		
+		// méthode pour se connecter à la base de données
 		public void connect() {
 			try {
 				//Etape 1 : Chargement du driver
@@ -87,28 +82,55 @@ public class ConnexionController {
 			return b;
 		}
 	
+		// Méthode pour récupérer ce que l'utilisateur a tapé et comparé
 		@FXML
 		private void connexionAction(ActionEvent event) {
-			if(id.getText().isEmpty()) {
-				error.setVisible(true);
-				password.setText("");
-			}	
-			if(connexion(id.getText(), password.getText())) {	
+			// si c'est le bouton pour s'inscrire
+			if(event.getSource()== buttonSign) {
 				try {
-					Parent home_page = FXMLLoader.load(getClass().getResource("Connected.fxml"));
-					Scene home_scene = new Scene(home_page);
-					Stage home_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-					home_stage.setScene(home_scene);
-					home_stage.show();
+					Main.changeScene("SignIn.fxml");
 				} catch (IOException e) {
-					System.out.println("Impossible d'afficher la page !");
+					System.err.println(e.getMessage());
+					System.out.println("Impossible d'afficher la page d'inscription !");
 				}
 			}
-			else {
-				error.setVisible(true);
-				password.setText("");
-			}		
-			
+			else { // si c'est le bouton connexion
+				if(connexion(id.getText(), password.getText())) {	
+	 				try {
+						Main.changeScene("Connected.fxml");
+	 				} catch (IOException e) {
+						System.err.println(e.getMessage());
+						System.out.println("Impossible d'afficher la page home !");
+	 				}
+	 			}
+				else {
+					error.setVisible(true);
+					password.setText("");
+				}			
+			}
 		}
 		
+		// méthode pour se connecter en appuyant sur entrer 
+		@FXML
+		private void keyAction(KeyEvent e) {
+			if(e.getCode() == KeyCode.ENTER) {
+				if(id.getText().isEmpty()) {
+					error.setVisible(true);
+					password.setText("");
+				}
+				
+				if(!password.getText().equals("password")) {
+					error.setVisible(true);
+					password.setText("");
+				}
+				else {
+					try {
+						Main.changeScene("Connected.fxml");
+					} catch (IOException er) {
+						System.err.println(er.getMessage());
+						System.out.println("Impossible d'afficher la page home !");
+					}
+				}
+			}
+		}
 }
