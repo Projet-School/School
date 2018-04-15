@@ -92,7 +92,6 @@ public class ModifInfosController extends Connexion implements Initializable {
 	@FXML
 	private void saveAction(ActionEvent event) {
 		// appliquer les changements dans la base de données
-		
 	}
 	
 	// méthode pour supprimer un agent
