@@ -1,12 +1,9 @@
 package application;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import com.mysql.jdbc.PreparedStatement;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -22,16 +19,11 @@ public class SignInController extends Connexion{
 	}
 
 	@FXML private TextField id;
-	@FXML private TextField mail;
 	@FXML private TextField password;
 	@FXML private TextField nom; 
 	@FXML private TextField prenom; 
-	@FXML private ChoiceBox<String> genre; 
-	@FXML private TextField dateNaiss; 
-	@FXML private TextField lieuNaiss;
-	@FXML private TextField nivEtude; 
-	@FXML private TextField domEtude; 
 	@FXML private ChoiceBox<String> function; 
+	
 	@FXML private Button buttonSignIn;
 	@FXML private Button buttonHome;
 	
@@ -79,7 +71,9 @@ public class SignInController extends Connexion{
 	// méthode pour inscrire une personne
 	@FXML
 	private void signInAction(ActionEvent event) {
-		if(id.getText().isEmpty() || mail.getText().isEmpty() || password.getText().isEmpty() || nom.getText().isEmpty() || prenom.getText().isEmpty() || dateNaiss.getText().isEmpty() || lieuNaiss.getText().isEmpty() || nivEtude.getText().isEmpty() || domEtude.getText().isEmpty() || genre.getSelectionModel().isEmpty() || function.getSelectionModel().isEmpty()) {
+		System.out.println(function.getSelectionModel().getSelectedItem());
+		
+		if(id.getText().isEmpty() || password.getText().isEmpty() || nom.getText().isEmpty() || prenom.getText().isEmpty() || function.getSelectionModel().isEmpty()) {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Information");
 			alert.setHeaderText("Il manque des informations !");
@@ -113,7 +107,7 @@ public class SignInController extends Connexion{
 	@FXML
 	private void keyAction(KeyEvent e) {
 		if(e.getCode() == KeyCode.ENTER) {
-			if(id.getText().isEmpty() || mail.getText().isEmpty() || password.getText().isEmpty() || nom.getText().isEmpty() || prenom.getText().isEmpty() || dateNaiss.getText().isEmpty() || lieuNaiss.getText().isEmpty() || nivEtude.getText().isEmpty() || domEtude.getText().isEmpty() || genre.getSelectionModel().isEmpty() || function.getSelectionModel().isEmpty()) {
+			if(id.getText().isEmpty() || password.getText().isEmpty() || nom.getText().isEmpty() || prenom.getText().isEmpty() || function.getSelectionModel().isEmpty()) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Information");
 				alert.setHeaderText("Il manque des informations !");
@@ -121,12 +115,12 @@ public class SignInController extends Connexion{
 			}
 			else {
 				try {
+					signin(nom.getText(), prenom.getText(), function.getSelectionModel().getSelectedItem(), id.getText(), password.getText());
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Information");
 					alert.setHeaderText("Votre inscription a été pris en compte.");
 					alert.setContentText("Vous allez être redirigé sur la page de connexion.");
 					alert.showAndWait();
-					
 					Main.changeScene("Connexion.fxml");
 				} catch (IOException er) {
 				}

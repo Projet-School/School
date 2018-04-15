@@ -1,11 +1,8 @@
 package application;
 
 import java.io.IOException;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Connection;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.mysql.jdbc.PreparedStatement;
@@ -18,14 +15,16 @@ import javafx.scene.input.KeyEvent;
 // le controller du fichier Connexion.fxml
 public class ConnexionController extends Connexion {
 	
+	private ArrayList<String> infosUser = null;
+	private String stat = null;
+	Connexion con = new Connexion(cn);
+	
 		public ConnexionController() {
 			super(cn);
 		}
 	
 		@FXML private TextField id;
-		
 		@FXML private PasswordField password;
-		
 		@FXML private Button buttonCon;
 		@FXML private Button buttonSign;
 		@FXML private Label error;
@@ -43,6 +42,8 @@ public class ConnexionController extends Connexion {
 				while (rs.next()) {
 					if((login.equals(rs.getString("login"))) && (mdp.equals(rs.getString("passwd")))){
 						b = true;
+						infosUser = con.info(login);
+						String stat = con.statut(login);
 					}
 				}
 			} catch (SQLException e) {
@@ -69,6 +70,17 @@ public class ConnexionController extends Connexion {
 			else { // si c'est le bouton connexion
 				if(connexion(id.getText(), password.getText())) {	
 	 				try {
+	 					// on met les infos de la bd dans l'individu utilisateur de la classe main
+						Main.getUser().setStatut(stat); // statut
+						Main.getUser().setIdIndividu(id.getText()); // id
+						Main.getUser().setPassword(password.getText()); // mdp
+						Main.getUser().setNomIndividu(infosUser.get(1)); // nom
+						Main.getUser().setPrenomIndividu(infosUser.get(2)); // prénom
+						
+						// si la perosnne est un enseignant on lui ajoute sa matière
+						if(infosUser.size() == 7) {
+							Main.getUser().setMatiere(infosUser.get(3));
+						}
 						Main.changeScene("Connected.fxml");
 	 				} catch (IOException e) {
 						System.err.println(e.getMessage());
@@ -91,17 +103,29 @@ public class ConnexionController extends Connexion {
 					password.setText("");
 				}
 				
-				if(!password.getText().equals("password")) {
-					error.setVisible(true);
-					password.setText("");
-				}
-				else {
-					try {
+				if(connexion(id.getText(), password.getText())) {	
+	 				try {
+	 					// on met les infos de la bd dans l'individu utilisateur de la classe main
+						Main.getUser().setStatut(stat); // statut
+						Main.getUser().setIdIndividu(id.getText()); // id
+						Main.getUser().setPassword(password.getText()); // mdp
+						Main.getUser().setNomIndividu(infosUser.get(1)); // nom
+						Main.getUser().setPrenomIndividu(infosUser.get(2)); // prénom
+						
+						// si la perosnne est un enseignant on lui ajoute sa matière
+						if(infosUser.size() == 7) {
+							Main.getUser().setMatiere(infosUser.get(3));
+						}
+						
 						Main.changeScene("Connected.fxml");
-					} catch (IOException er) {
+	 				} catch (IOException er) {
 						System.err.println(er.getMessage());
 						System.out.println("Impossible d'afficher la page home !");
-					}
+	 				}
+	 			}
+				else {
+					error.setVisible(true);
+					password.setText("");		
 				}
 			}
 		}

@@ -2,39 +2,33 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
 import com.mysql.jdbc.PreparedStatement;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 public class ModifInfosController extends Connexion implements Initializable {
 
-	public ModifInfosController(Connection cn) {
+	public ModifInfosController() {
 		super(cn);
 	}
 
 	@FXML private TextField id;
-	@FXML private TextField mail;
 	@FXML private TextField password;
 	@FXML private TextField nom; 
 	@FXML private TextField prenom; 
-	@FXML private ChoiceBox<String> genre; 
-	@FXML private TextField dateNaiss; 
-	@FXML private TextField lieuNaiss;
-	@FXML private TextField nivEtude; 
-	@FXML private TextField domEtude; 
 	@FXML private ChoiceBox<String> function; 
+	@FXML private TextField matiere; 
+	@FXML private Label labMatiere;
+	
 	@FXML private Button buttonHome;
 	@FXML private Button buttonSave;
 	@FXML private Button buttonSuppAgent;
@@ -71,12 +65,6 @@ public class ModifInfosController extends Connexion implements Initializable {
 		}
 	}
 	
-	
-	// méthode pour initialiser la page avec les informations de la personne concerné
-	public void initialize(URL location, ResourceBundle resources) {
-		
-		
-	}
 
 	// méthode pour retourner à la page d'accueil
 	@FXML
@@ -112,5 +100,20 @@ public class ModifInfosController extends Connexion implements Initializable {
 	private void suppAgentAction(ActionEvent event) {
 		// appliquer les changements dans la base de données
 			
+	}
+
+
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		id.setText(Main.getUser().getIdIndividu());
+		password.setText(Main.getUser().getPassword());
+		nom.setText(Main.getUser().getNomIndividu());
+		prenom.setText(Main.getUser().getPrenomIndividu());
+		
+		/*if(Main.getUser().getStatut().equals("Enseignant")) {
+			matiere.setVisible(true);
+			labMatiere.setVisible(true);
+			matiere.setText(Main.getUser().getMatiere());
+		}*/
+		
 	}
 }

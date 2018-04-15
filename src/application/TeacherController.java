@@ -160,7 +160,7 @@ public class TeacherController implements Initializable {
 		@FXML
 		private void changeInfos(ActionEvent event) {
 			try {
-				Main.changeScene("modifInfosInfos.fxml");
+				Main.changeScene("modifInfos.fxml");
 			} catch (IOException e) {
 				System.err.println(e.getMessage());
 				System.out.println("Impossible d'afficher la page de modification des infos !");
@@ -201,7 +201,7 @@ public class TeacherController implements Initializable {
 		private void goInAction(ActionEvent event) {
 			if(event.getSource() == modifInfos) {
 				try {
-					Main.changeScene("modifInfosInfos.fxml");
+					Main.changeScene("modifInfos.fxml");
 				} catch (IOException e) {
 					System.err.println(e.getMessage());
 					System.out.println("Impossible d'afficher la page de modification des infos !");

@@ -3,8 +3,11 @@ package application;
 
 public class Individus {
     private String idIndividu;
+    private String password;
     private String nomIndividu;
     private String prenomIndividu;
+    private String matiere; // si c'est un prof
+    private String statut;
     private String genreIndividu;
     private String datNaisIndividu;
     private Adresses lieuNaisIndividu;
@@ -21,6 +24,9 @@ public class Individus {
     public Individus(){
    	 idIndividu = null;
    	 nomIndividu = null;
+   	 password = null;
+   	 matiere = null;
+   	 statut = null;
    	 prenomIndividu = null;
    	 genreIndividu = null;
    	 datNaisIndividu = null;
@@ -155,5 +161,29 @@ public class Individus {
     public void setLieuNaisIndividu(Adresses value) {
         this.lieuNaisIndividu = value;
     }
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getStatut() {
+		return statut;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
+	}
+
+	public String getMatiere() {
+		return matiere;
+	}
+
+	public void setMatiere(String matiere) {
+		matiere = matiere;
+	}
 
 }

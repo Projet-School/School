@@ -45,6 +45,7 @@ public class ConnectedController implements Initializable {
 		cours.setVisible(vis);
 		planning.setVisible(vis);
 		
+
 		// Evènement souris entrée et sortie pour l'espace étudiant
 		espEtudiant.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override

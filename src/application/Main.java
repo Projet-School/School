@@ -11,7 +11,7 @@ import javafx.scene.Scene;
 
 public class Main extends Application {
 	public static Stage stage;
-	public Individus utilisateur = new Individus();
+	public static Individus utilisateur = new Individus();
 	
 	@Override
 	public void start(Stage primaryStage) {                 
@@ -26,6 +26,10 @@ public class Main extends Application {
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
+	}
+	
+	public static Individus getUser() {
+		return utilisateur;
 	}
 	
 	// méthode pour changer de scene 

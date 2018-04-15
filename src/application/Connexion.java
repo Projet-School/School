@@ -12,7 +12,7 @@ import com.mysql.jdbc.PreparedStatement;
 public class Connexion {
 	private String url = "jdbc:mysql://localhost:3306/school?useSSL=false";
 	private String login = "root";
-	private String passwd = "";
+	private String passwd = "d";
 	protected static Connection cn = null;
 	private Statement st = null;
 	
@@ -74,7 +74,7 @@ public class Connexion {
 		return statut;
 	}
 	
-	//Permet de récupérer l'id d'une personne
+	//Permet de récupérer l'id de connexion (auto implémenté par la bd) d'une personne
 	public String id(String login) {
 		connect();
 		String id = null;;
