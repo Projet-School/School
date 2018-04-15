@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import com.mysql.jdbc.PreparedStatement;
@@ -33,19 +34,28 @@ public class ModifInfosController extends Connexion implements Initializable {
 	@FXML private Button buttonSave;
 	@FXML private Button buttonSuppAgent;
 	
-	public void modif(String nom, String prenom, String statut, String login, String passwd) {
+	public void modif(String nom, String prenom, String login, String passwd) {
 		connect();
 		String sql = null;
 		String sql2 = null;
+		String s = null;
+		String id = null;
+		ResultSet rs = null;
 		try {
 			sql = "UPDATE connexion SET login = ?, passwd = ? WHERE login = ?";
 			PreparedStatement ps = (PreparedStatement) cn.prepareStatement(sql);
 			ps.setString(1, login);
 			ps.setString(2, passwd);
-			ps.setString(3, login);
+			ps.setString(3, Main.getUser().getIdIndividu());
 			ps.executeUpdate();
-			String s = statut(login);
-			String id = id(login);
+			String sql3 = "SELECT IdConnexion, statut FROM connexion WHERE login = ?";
+			PreparedStatement ps3 = (PreparedStatement) cn.prepareStatement(sql3);
+			ps3.setString(1, login);
+			rs = ps3.executeQuery();
+			while (rs.next()) {
+				id = rs.getString("IdConnexion");
+				s = rs.getString("statut");
+			}
 			if (s.equals("Enseignant")) {
 				sql2 = "UPDATE enseignant SET nomEnseignant = ?, prenomEnseignant = ? WHERE Id_Connexion = ?";
 			}
@@ -92,6 +102,7 @@ public class ModifInfosController extends Connexion implements Initializable {
 	@FXML
 	private void saveAction(ActionEvent event) {
 		// appliquer les changements dans la base de données
+		modif(nom.getText(), prenom.getText(), id.getText(), password.getText());
 	}
 	
 	// méthode pour supprimer un agent
