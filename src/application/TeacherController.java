@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 
 public class TeacherController implements Initializable {
 	////commun à chaque fenêtre des espaces
@@ -182,7 +184,10 @@ public class TeacherController implements Initializable {
 				}
 			}
 			if(event.getSource() == addCours) {
-				// fonction pour copier coller un fichier dans le dossier cours
+				// ajouter fonction ouvrir un fichier
+				FileChooser fc = new FileChooser();
+			    fc.setTitle("Choisi un fichier");
+			    File selectedFile = fc.showOpenDialog(null);
 			}
 			if(event.getSource() == abs) {
 				Alert alert = new Alert(AlertType.INFORMATION);

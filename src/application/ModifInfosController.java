@@ -11,7 +11,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
@@ -28,14 +27,12 @@ public class ModifInfosController extends Connexion implements Initializable {
 	@FXML private TextField password;
 	@FXML private TextField nom; 
 	@FXML private TextField prenom; 
-	@FXML private ChoiceBox<String> function; 
 	@FXML private TextField matiere; 
 	@FXML private Label labMatiere;
 	@FXML private Label header;
 	
 	@FXML private Button buttonHome;
 	@FXML private Button buttonSave;
-	@FXML private Button buttonSuppAgent;
 	
 	public void modif(String nom, String prenom, String login, String passwd) {
 		connect();
@@ -117,6 +114,11 @@ public class ModifInfosController extends Connexion implements Initializable {
 		// appliquer les changements dans la base de données
 		modif(nom.getText(), prenom.getText(), id.getText(), password.getText());
 		
+		Main.getUser().setIdIndividu(id.getText());
+		Main.getUser().setPassword(password.getText());
+		Main.getUser().setNomIndividu(nom.getText());
+		Main.getUser().setPrenomIndividu(prenom.getText());
+		
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("Information");
 		alert.setHeaderText("Les modifications ont été sauvegardé !");
@@ -126,22 +128,6 @@ public class ModifInfosController extends Connexion implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	// méthode pour supprimer un agent
-	@FXML
-	private void suppAgentAction(ActionEvent event) {
-		// appliquer les changements dans la base de données
-		
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Information");
-		alert.setHeaderText("La suppression a été effectué !");
-		alert.showAndWait();
-		try {
-			Main.changeScene("Connected.fxml");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}			
 	}
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -155,9 +141,5 @@ public class ModifInfosController extends Connexion implements Initializable {
 			labMatiere.setVisible(true);
 			matiere.setText(Main.getUser().getMatiere());
 		}
-		
-		if(Main.getUser().getStatut().equals("Enseignant") || Main.getUser().getStatut().equals("Etudiant")) {
-			buttonSuppAgent.setVisible(false);
-		}	
 	}
 }

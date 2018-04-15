@@ -45,7 +45,7 @@
                       <RowConstraints minHeight="50.0" percentHeight="25.0" prefHeight="150.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="addAgent" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Ajouter un étudiant" wrapText="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                        <Button fx:id="addAgent" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Ajouter un agent" wrapText="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                            <GridPane.margin>
                               <Insets bottom="20.0" left="20.0" right="20.0" />
                            </GridPane.margin>
@@ -53,7 +53,7 @@
                               <Font name="Arial Black" size="24.0" />
                            </font>
                         </Button>
-                        <Button fx:id="modifAgent" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Modifier un étudiant" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <Button fx:id="modifAgent" defaultButton="true" focusTraversable="false" maxHeight="500.0" maxWidth="1000.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#goInAction" prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: orange;" text="Modifier un agent" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <GridPane.margin>
                               <Insets bottom="20.0" left="20.0" right="20.0" />
                            </GridPane.margin>

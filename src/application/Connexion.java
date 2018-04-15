@@ -12,8 +12,8 @@ import com.mysql.jdbc.PreparedStatement;
 public class Connexion {
 	private String url = "jdbc:mysql://localhost:3306/school?useSSL=false";
 	private String login = "root";
-	private String passwd = "";
-	//private String passwd = "d";
+	//private String passwd = "";
+	private String passwd = "d";
 	protected static Connection cn = null;
 	private Statement st = null;
 	

@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,9 +16,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 
 public class AdminController implements Initializable{
-////commun à chaque fenêtre des espaces
+	////commun à chaque fenêtre des espaces
 	@FXML private AnchorPane leftPane;
 	@FXML private Button menu;
 	@FXML private Button dec;
@@ -175,7 +177,7 @@ public class AdminController implements Initializable{
 	private void goInAction(ActionEvent event) {
 		if(event.getSource() == addAgent) {
 			try {
-				Main.changeScene("modifInfosInfos.fxml");
+				Main.changeScene("modifInfos.fxml");
 			} catch (IOException e) {
 				System.err.println(e.getMessage());
 				System.out.println("Impossible d'afficher la page de création des infos !");
@@ -183,7 +185,7 @@ public class AdminController implements Initializable{
 		}
 		if(event.getSource() == modifAgent) {
 			try {
-				Main.changeScene("modifInfosInfos.fxml");
+				Main.changeScene("modifInfos.fxml");
 			} catch (IOException e) {
 				System.err.println(e.getMessage());
 				System.out.println("Impossible d'afficher la page de création des infos !");
@@ -191,6 +193,9 @@ public class AdminController implements Initializable{
 		}
 		if(event.getSource() == addCours) {
 			// ajouter fonction ouvrir un fichier
+			FileChooser fc = new FileChooser();
+		    fc.setTitle("Choisi un fichier");
+		    File selectedFile = fc.showOpenDialog(null);
 		}
 		if(event.getSource() == suppCours) {
 			Alert alert = new Alert(AlertType.INFORMATION);
