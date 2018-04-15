@@ -16,7 +16,11 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 	 
 // le controller du fichier Connexion.fxml
-public class ConnexionController {
+public class ConnexionController extends Connexion {
+	
+		public ConnexionController() {
+			super(cn);
+		}
 	
 		@FXML private TextField id;
 		
@@ -25,41 +29,7 @@ public class ConnexionController {
 		@FXML private Button buttonCon;
 		@FXML private Button buttonSign;
 		@FXML private Label error;
-	
-		private String url = "jdbc:mysql://localhost:3306/school?useSSL=false";
-		private String login = "root";
-		//private String passwd = "";
-		private String passwd = "d";
-		Connection cn = null;
-		Statement st = null;
 		
-		// méthode pour se connecter à la base de données
-		public void connect() {
-			try {
-				//Etape 1 : Chargement du driver
-				Class.forName("com.mysql.jdbc.Driver");
-				//Etape 2 : récupération de la connexion
-				cn = DriverManager.getConnection(url, login, passwd);
-				st = cn.createStatement();
-			}
-			catch (SQLException e) {
-				e.printStackTrace();
-			}
-			catch (ClassNotFoundException f) {
-				f.printStackTrace();
-			} 
-		}
-		
-		public void close() {
-			try {
-				//Etape 3 : libérer ressources de la mémoire
-				cn.close();
-				st.close();
-			}
-			catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
 		
 		public boolean connexion (String login, String mdp) {
 			connect();
