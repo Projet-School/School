@@ -84,7 +84,6 @@ public class ConnexionController extends Connexion {
 						Main.getUser().setPassword(infosUser.get(1)); // mdp
 						
 						Main.changeScene("Connected.fxml");
-						System.out.println(info(id.getText()));
 	 				} catch (IOException e) {
 						System.err.println(e.getMessage());
 						System.out.println("Impossible d'afficher la page home !");

@@ -37,19 +37,28 @@ public class ModifInfosController extends Connexion implements Initializable {
 	@FXML private Button buttonSave;
 	@FXML private Button buttonSuppAgent;
 	
-	public void modif(String nom, String prenom, String statut, String login, String passwd) {
+	public void modif(String nom, String prenom, String login, String passwd) {
 		connect();
 		String sql = null;
 		String sql2 = null;
+		String s = null;
+		String id = null;
+		ResultSet rs = null;
 		try {
 			sql = "UPDATE connexion SET login = ?, passwd = ? WHERE login = ?";
 			PreparedStatement ps = (PreparedStatement) cn.prepareStatement(sql);
 			ps.setString(1, login);
 			ps.setString(2, passwd);
-			ps.setString(3, login);
+			ps.setString(3, Main.getUser().getIdIndividu());
 			ps.executeUpdate();
-			String s = statut(login);
-			String id = id(login);
+			String sql3 = "SELECT IdConnexion, statut FROM connexion WHERE login = ?";
+			PreparedStatement ps3 = (PreparedStatement) cn.prepareStatement(sql3);
+			ps3.setString(1, login);
+			rs = ps3.executeQuery();
+			while (rs.next()) {
+				id = rs.getString("IdConnexion");
+				s = rs.getString("statut");
+			}
 			if (s.equals("Enseignant")) {
 				sql2 = "UPDATE enseignant SET nomEnseignant = ?, prenomEnseignant = ? WHERE Id_Connexion = ?";
 			}
@@ -134,47 +143,6 @@ public class ModifInfosController extends Connexion implements Initializable {
 			e.printStackTrace();
 		}			
 	}
-
-	public void modif(String nom, String prenom, String login, String passwd) {
-		connect();
- 		String sql = null;
- 		String sql2 = null;
-		String s = null;
-		String id = null;
-		ResultSet rs = null;
-		try {
- 			sql = "UPDATE connexion SET login = ?, passwd = ? WHERE login = ?";
- 			PreparedStatement ps = (PreparedStatement) cn.prepareStatement(sql);
- 			ps.setString(1, login);
- 			ps.setString(2, passwd);
-			ps.setString(3, Main.getUser().getIdIndividu());
- 			ps.executeUpdate();
-			String sql3 = "SELECT IdConnexion, statut FROM connexion WHERE login = ?";
-			PreparedStatement ps3 = (PreparedStatement) cn.prepareStatement(sql3);
-			ps3.setString(1, login);
-			rs = ps3.executeQuery();
-			while (rs.next()) {
-				id = rs.getString("IdConnexion");
-				s = rs.getString("statut");
-			}
- 			if (s.equals("Enseignant")) {
- 				sql2 = "UPDATE enseignant SET nomEnseignant = ?, prenomEnseignant = ? WHERE Id_Connexion = ?";
- 			}
- 			else {
- 				sql2 = "UPDATE etudiant SET nomEtudiant = ?, prenomEtudiant = ? WHERE Id_Connexion = ?";
- 			}
- 			PreparedStatement ps2 = (PreparedStatement) cn.prepareStatement(sql2);
- 			ps2.setString(1, nom);
- 			ps2.setString(2, prenom);
- 			ps2.setString(3, id);
- 			ps2.executeUpdate();
- 		} catch (SQLException e) {
- 			e.printStackTrace();
- 		}
- 		finally {
- 			close();
- 		}
- 	}
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		id.setText(Main.getUser().getIdIndividu());
