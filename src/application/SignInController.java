@@ -56,9 +56,9 @@ public class SignInController extends Connexion{
 				id = rs.getString("Idconnexion");
 			}
 			
-			if(statut.equals("enseignant")) {
+			if(statut.equals("Enseignant")) {
 				sql = "INSERT INTO enseignant (idEnseignant, nomEnseignant, prenomEnseignant, matiere1Enseignant, matiere2Enseignant,"
-						+ "matiere2Enseignant_2, Id_Connexion) VALUES (NULL,?,?,,,,?)";
+						+ "matiere2Enseignant_2, Id_Connexion) VALUES (NULL,?,?,'','','',?)";
 			}
 			else {
 				sql = "INSERT INTO etudiant (idEtudiant, nomEtudiant, prenomEtudiant, Id_Connexion) VALUES (NULL,?,?,?)";
