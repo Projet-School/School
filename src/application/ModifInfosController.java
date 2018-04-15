@@ -20,7 +20,7 @@ import javafx.scene.input.KeyEvent;
 
 public class ModifInfosController extends Connexion implements Initializable {
 
-	public ModifInfosController(Connection cn) {
+	public ModifInfosController() {
 		super(cn);
 	}
 
@@ -104,7 +104,6 @@ public class ModifInfosController extends Connexion implements Initializable {
 	@FXML
 	private void saveAction(ActionEvent event) {
 		// appliquer les changements dans la base de données
-		
 	}
 	
 	// méthode pour supprimer un agent

@@ -13,6 +13,7 @@ public class Connexion {
 	private String url = "jdbc:mysql://localhost:3306/school?useSSL=false";
 	private String login = "root";
 	private String passwd = "";
+	//private String passwd = "d";
 	protected static Connection cn = null;
 	private Statement st = null;
 	
@@ -108,13 +109,15 @@ public class Connexion {
 		int cpt = 1;
 		int max;
 		try {
-			String sql = "SELECT idConnexion, statut FROM connexion WHERE login = ?";
+			String sql = "SELECT * FROM connexion WHERE login = ?";
 			PreparedStatement ps = (PreparedStatement) cn.prepareStatement(sql);
 			ps.setString(1, login);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				statut = rs.getString("statut");
 				i = rs.getString("idConnexion");
+				info.add(rs.getString("login"));
+				info.add(rs.getString("passwd"));
 			}
 			if(statut.equals("enseignant") || statut.equals("Enseignant")) {
 				sql2 = "SELECT * FROM enseignant WHERE Id_Connexion = ?";
