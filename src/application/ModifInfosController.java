@@ -2,7 +2,12 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import com.mysql.jdbc.PreparedStatement;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +18,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-public class ModifInfosController implements Initializable{
+public class ModifInfosController extends Connexion implements Initializable {
+
+	public ModifInfosController(Connection cn) {
+		super(cn);
+	}
 
 	@FXML private TextField id;
 	@FXML private TextField mail;
@@ -29,6 +38,39 @@ public class ModifInfosController implements Initializable{
 	@FXML private Button buttonHome;
 	@FXML private Button buttonSave;
 	@FXML private Button buttonSuppAgent;
+	
+	public void modif(String nom, String prenom, String statut, String login, String passwd) {
+		connect();
+		String sql = null;
+		String sql2 = null;
+		try {
+			sql = "UPDATE connexion SET login = ?, passwd = ? WHERE login = ?";
+			PreparedStatement ps = (PreparedStatement) cn.prepareStatement(sql);
+			ps.setString(1, login);
+			ps.setString(2, passwd);
+			ps.setString(3, login);
+			ps.executeUpdate();
+			String s = statut(login);
+			String id = id(login);
+			if (s.equals("Enseignant")) {
+				sql2 = "UPDATE enseignant SET nomEnseignant = ?, prenomEnseignant = ? WHERE Id_Connexion = ?";
+			}
+			else {
+				sql2 = "UPDATE etudiant SET nomEtudiant = ?, prenomEtudiant = ? WHERE Id_Connexion = ?";
+			}
+			PreparedStatement ps2 = (PreparedStatement) cn.prepareStatement(sql2);
+			ps2.setString(1, nom);
+			ps2.setString(2, prenom);
+			ps2.setString(3, id);
+			ps2.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			close();
+		}
+	}
+	
 	
 	// méthode pour initialiser la page avec les informations de la personne concerné
 	public void initialize(URL location, ResourceBundle resources) {
