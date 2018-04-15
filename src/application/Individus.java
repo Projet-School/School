@@ -183,7 +183,7 @@ public class Individus {
 	}
 
 	public void setMatiere(String matiere) {
-		matiere = matiere;
+		this.matiere = matiere;
 	}
 
 }

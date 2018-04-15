@@ -22,9 +22,6 @@ public class AdminController implements Initializable{
 	@FXML private Button menu;
 	@FXML private Button dec;
 	@FXML private Button home;
-	@FXML private Button infos;
-	@FXML private Button cours;
-	@FXML private Button planning;
 	private boolean vis = false;
 	////
 	
@@ -41,9 +38,6 @@ public class AdminController implements Initializable{
 		menu.setGraphic(new ImageView(menuIcon));
 		dec.setGraphic(new ImageView(decoIcon));
 		home.setVisible(vis);
-		infos.setVisible(vis);
-		cours.setVisible(vis);
-		planning.setVisible(vis);
 		
 		addAgent.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
@@ -143,16 +137,10 @@ public class AdminController implements Initializable{
 			vis = false;
 			leftPane.setStyle("-fx-background-color: white");
 			home.setVisible(vis);
-			infos.setVisible(vis);
-			cours.setVisible(vis);
-			planning.setVisible(vis);
 		} else {
 			vis = true;
 			leftPane.setStyle("-fx-background-color: silver");
 			home.setVisible(vis);
-			infos.setVisible(vis);
-			cours.setVisible(vis);
-			planning.setVisible(vis);
 		}
 	}
 			
@@ -171,17 +159,6 @@ public class AdminController implements Initializable{
 		}
 	}
 			
-	// méthode pour afficher la page de modification des informations
-	@FXML
-	private void changeInfos(ActionEvent event) {
-		try {
-			Main.changeScene("modifInfos.fxml");
-		} catch (IOException e) {
-			System.err.println(e.getMessage());
-			System.out.println("Impossible d'afficher la page de modification des infos !");
-		}
-	}
-			
 	// méthode pour retourner à l'accueil
 	@FXML
 	private void homeAction(ActionEvent event) {
@@ -191,24 +168,6 @@ public class AdminController implements Initializable{
 			System.err.println(e.getMessage());
 			System.out.println("Impossible de retourner à l'accueil !");
 		}
-	}
-			
-	// méthode pour afficher la page des cours
-	@FXML
-	private void coursAction(ActionEvent event) {
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Information");
-		alert.setHeaderText("Vous n'avez aucuns cours à télécharger");
-		alert.showAndWait();
-	}
-					
-	// méthode pour afficher la page des examens avec dates
-	@FXML
-	private void examenAction(ActionEvent event) {
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Information");
-		alert.setHeaderText("Vous n'avez pas d'examens pendant les prochains mois");
-		alert.showAndWait();
 	}
 	
 	// méthode pour aller dans différents espaces

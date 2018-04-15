@@ -30,16 +30,6 @@
                         <Font name="Arial Black" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="planning" focusTraversable="false" layoutY="180.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Planning Examen">
-                     <font>
-                        <Font name="Arial Black" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="cours" focusTraversable="false" layoutY="120.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Mes cours">
-                     <font>
-                        <Font name="Arial Black" size="14.0" />
-                     </font>
-                  </Button>
                   <Button fx:id="infos" focusTraversable="false" layoutY="60.0" mnemonicParsing="false" onAction="#changeInfos" prefHeight="60.0" prefWidth="200.0" text="Mes informations">
                      <font>
                         <Font name="Arial Black" size="14.0" />

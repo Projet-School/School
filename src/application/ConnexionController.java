@@ -16,7 +16,6 @@ import javafx.scene.input.KeyEvent;
 public class ConnexionController extends Connexion {
 	
 	private ArrayList<String> infosUser = null;
-	private String stat = null;
 	Connexion con = new Connexion(cn);
 	
 		public ConnexionController() {
@@ -43,7 +42,6 @@ public class ConnexionController extends Connexion {
 					if((login.equals(rs.getString("login"))) && (mdp.equals(rs.getString("passwd")))){
 						b = true;
 						infosUser = con.info(login);
-						String stat = con.statut(login);
 					}
 				}
 			} catch (SQLException e) {
@@ -70,17 +68,21 @@ public class ConnexionController extends Connexion {
 			else { // si c'est le bouton connexion
 				if(connexion(id.getText(), password.getText())) {	
 	 				try {
+	 					if( !(id.getText().equals("admin")) && !(password.getText().equals("admin")) ) {
 	 					// on met les infos de la bd dans l'individu utilisateur de la classe main
-						Main.getUser().setStatut(stat); // statut
-						Main.getUser().setIdIndividu(id.getText()); // id
-						Main.getUser().setPassword(password.getText()); // mdp
-						Main.getUser().setNomIndividu(infosUser.get(1)); // nom
-						Main.getUser().setPrenomIndividu(infosUser.get(2)); // prénom
+							Main.getUser().setNomIndividu(infosUser.get(4)); // nom
+							Main.getUser().setPrenomIndividu(infosUser.get(5)); // prénom
+							
+							// si la perosnne est un enseignant on lui ajoute sa matière
+							if(infosUser.size() > 7) {
+								Main.getUser().setMatiere(infosUser.get(6));
+							}
+	 					}
+	 					
+	 					Main.getUser().setStatut(infosUser.get(2)); // statut
+						Main.getUser().setIdIndividu(infosUser.get(0)); // id
+						Main.getUser().setPassword(infosUser.get(1)); // mdp
 						
-						// si la perosnne est un enseignant on lui ajoute sa matière
-						if(infosUser.size() == 7) {
-							Main.getUser().setMatiere(infosUser.get(3));
-						}
 						Main.changeScene("Connected.fxml");
 						System.out.println(info(id.getText()));
 	 				} catch (IOException e) {
@@ -106,17 +108,20 @@ public class ConnexionController extends Connexion {
 				
 				if(connexion(id.getText(), password.getText())) {	
 	 				try {
-	 					// on met les infos de la bd dans l'individu utilisateur de la classe main
-						Main.getUser().setStatut(stat); // statut
-						Main.getUser().setIdIndividu(id.getText()); // id
-						Main.getUser().setPassword(password.getText()); // mdp
-						Main.getUser().setNomIndividu(infosUser.get(1)); // nom
-						Main.getUser().setPrenomIndividu(infosUser.get(2)); // prénom
-						
-						// si la perosnne est un enseignant on lui ajoute sa matière
-						if(infosUser.size() == 7) {
-							Main.getUser().setMatiere(infosUser.get(3));
-						}
+	 					if( !(id.getText().equals("admin")) && !(password.getText().equals("admin")) ) {
+		 					// on met les infos de la bd dans l'individu utilisateur de la classe main
+							Main.getUser().setNomIndividu(infosUser.get(4)); // nom
+							Main.getUser().setPrenomIndividu(infosUser.get(5)); // prénom
+								
+							// si la perosnne est un enseignant on lui ajoute sa matière
+							if(infosUser.size() > 7) {
+								Main.getUser().setMatiere(infosUser.get(6));
+							}
+		 				}
+		 					
+		 				Main.getUser().setStatut(infosUser.get(2)); // statut
+						Main.getUser().setIdIndividu(infosUser.get(0)); // id
+						Main.getUser().setPassword(infosUser.get(1)); // mdp
 						
 						Main.changeScene("Connected.fxml");
 	 				} catch (IOException er) {

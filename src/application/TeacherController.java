@@ -23,8 +23,6 @@ public class TeacherController implements Initializable {
 	@FXML private Button dec;
 	@FXML private Button home;
 	@FXML private Button infos;
-	@FXML private Button cours;
-	@FXML private Button planning;
 	private boolean vis = false;
 	////
 	
@@ -41,8 +39,6 @@ public class TeacherController implements Initializable {
 		dec.setGraphic(new ImageView(decoIcon));
 		home.setVisible(vis);
 		infos.setVisible(vis);
-		cours.setVisible(vis);
-		planning.setVisible(vis);
 		
 		modifInfos.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
@@ -128,15 +124,11 @@ public class TeacherController implements Initializable {
 				leftPane.setStyle("-fx-background-color: white");
 				home.setVisible(vis);
 				infos.setVisible(vis);
-				cours.setVisible(vis);
-				planning.setVisible(vis);
 			} else {
 				vis = true;
 				leftPane.setStyle("-fx-background-color: silver");
 				home.setVisible(vis);
 				infos.setVisible(vis);
-				cours.setVisible(vis);
-				planning.setVisible(vis);
 			}
 		}
 		
@@ -178,24 +170,6 @@ public class TeacherController implements Initializable {
 			}
 		}
 		
-		// méthode pour afficher la page des cours
-		@FXML
-		private void coursAction(ActionEvent event) {
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Information");
-			alert.setHeaderText("Vous n'avez aucuns cours à télécharger");
-			alert.showAndWait();
-		}
-				
-		// méthode pour afficher la page des examens avec dates
-		@FXML
-		private void examenAction(ActionEvent event) {
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Information");
-			alert.setHeaderText("Vous n'avez pas d'examens pendant les prochains mois");
-			alert.showAndWait();
-		}
-		
 		// méthode pour aller dans différents espaces
 		@FXML
 		private void goInAction(ActionEvent event) {
@@ -220,7 +194,7 @@ public class TeacherController implements Initializable {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Information");
 				alert.setHeaderText("Vous n'avez pas les droits pour supprimer des fichiers");
-				alert.setContentText("Demandez à un administrateur ou une secrétaire");
+				alert.setContentText("Demandez à un administrateur !");
 				alert.showAndWait();
 			}
 			if(event.getSource() == inscris) {

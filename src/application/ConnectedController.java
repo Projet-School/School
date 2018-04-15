@@ -44,8 +44,8 @@ public class ConnectedController implements Initializable {
 		infos.setVisible(vis);
 		cours.setVisible(vis);
 		planning.setVisible(vis);
-		
 
+		
 		// Evènement souris entrée et sortie pour l'espace étudiant
 		espEtudiant.setOnMouseEntered(new EventHandler<MouseEvent>() {
 			@Override
@@ -125,9 +125,24 @@ public class ConnectedController implements Initializable {
 			vis = true;
 			leftPane.setStyle("-fx-background-color: silver");
 			home.setVisible(vis);
-			infos.setVisible(vis);
-			cours.setVisible(vis);
-			planning.setVisible(vis);
+
+			if(Main.getUser().getStatut().equals("Enseignant")) {
+				cours.setDisable(true);
+				planning.setVisible(vis);
+				infos.setVisible(vis);
+			}
+			else {
+				if(Main.getUser().getStatut().equals("Secrétaire")) {
+					cours.setVisible(false);
+					planning.setVisible(false);
+					infos.setVisible(false);
+				}
+				else {
+					cours.setVisible(vis);
+					planning.setVisible(vis);
+					infos.setVisible(vis);
+				}
+			}
 		}
 	}
 	
@@ -162,34 +177,66 @@ public class ConnectedController implements Initializable {
 	@FXML
 	private void goInAction(ActionEvent event) {
 		if(event.getSource() == espEtudiant) {
-			try {
-				Main.changeScene("SpaceStudent.fxml");
-			} catch (IOException e) {
-				System.err.println(e.getMessage());
-				System.out.println("Impossible d'aller dans l'espace étudiant !");
+			if(Main.getUser().getStatut().equals("Secrétaire") || Main.getUser().getStatut().equals("Enseignant")) {
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Information");
+				alert.setHeaderText("Cette espace est réservé aux étudiants !");
+				alert.showAndWait();
+			}
+			else {
+				try {
+					Main.changeScene("SpaceStudent.fxml");
+				} catch (IOException e) {
+					System.err.println(e.getMessage());
+					System.out.println("Impossible d'aller dans l'espace étudiant !");
+				}
 			}
 		}
 		if(event.getSource() == espEnseignant) {
-			try {
-				Main.changeScene("SpaceTeacher.fxml");
-			} catch (IOException e) {
-				System.err.println(e.getMessage());
-				System.out.println("Impossible d'aller dans l'espace enseignant !");
+			if(Main.getUser().getStatut().equals("Etudiant") || Main.getUser().getStatut().equals("Secrétaire")) {
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Information");
+				alert.setHeaderText("Cette espace est réservé pour les enseignants !");
+				alert.showAndWait();
+			}
+			else {
+				try {
+					Main.changeScene("SpaceTeacher.fxml");
+				} catch (IOException e) {
+					System.err.println(e.getMessage());
+					System.out.println("Impossible d'aller dans l'espace enseignant !");
+				}
 			}
 		}
 		if(event.getSource() == espAdmin) {
-			try {
-				Main.changeScene("SpaceAdmin.fxml");
-			} catch (IOException e) {
-				System.err.println(e.getMessage());
-				System.out.println("Impossible d'aller dans l'espace administratif !");
+			if(Main.getUser().getStatut().equals("Etudiant") || Main.getUser().getStatut().equals("Enseignant")) {
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Information");
+				alert.setHeaderText("Cette espace est réservé à l'administrateur !");
+				alert.showAndWait();
+			}
+			else {
+				try {
+					Main.changeScene("SpaceAdmin.fxml");
+				} catch (IOException e) {
+					System.err.println(e.getMessage());
+					System.out.println("Impossible d'aller dans l'espace administratif !");
+				}
 			}
 		}
 		if(event.getSource() == espCompta) {
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Information");
-			alert.setHeaderText("Cette espace sera disponible très prochainement.");
-			alert.showAndWait();
+			if(Main.getUser().getStatut().equals("Etudiant") || Main.getUser().getStatut().equals("Enseignant")) {
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Information");
+				alert.setHeaderText("Cette espace est réservé à l'administrateur !");
+				alert.showAndWait();
+			}
+			else {
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Information");
+				alert.setHeaderText("Cette espace sera disponible très prochainement.");
+				alert.showAndWait();
+			}
 		}
 	}
 	
